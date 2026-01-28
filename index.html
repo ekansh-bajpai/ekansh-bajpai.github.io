@@ -2,61 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ekansh Bajpai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ekansh Bajpai | Portfolio</title>
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
-      padding: 2.5rem 3rem;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-      text-align: center;
-      max-width: 420px;
-    }
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 2rem;
-    }
-    p {
-      opacity: 0.9;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
       line-height: 1.6;
     }
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      opacity: 0.85;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+    h2 {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: #0f172a;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
     a {
-      display: inline-block;
-      margin-top: 1.2rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      background: #ffffff;
-      color: #2a5298;
+      color: #2563eb;
       text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      text-decoration: underline;
+    }
+    .tags span {
+      display: inline-block;
+      background: #e2e8f0;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      margin: 0.2rem;
+      font-size: 0.85rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #0f172a;
+      color: white;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
+
+<header>
+  <h1>Ekansh Bajpai</h1>
+  <p>Full-Stack Developer | AWS | IoT | Embedded Systems</p>
+  <p>
+    📍 Paderborn, Germany · 
+    📧 <a href="mailto:ekansh.bajpai712@gmail.com" style="color:#93c5fd;">Email</a> ·
+    🔗 <a href="https://www.hackster.io/ekanshbajpai712" style="color:#93c5fd;">Hackster</a>
+  </p>
+</header>
+
+<section>
+  <h2>About Me</h2>
   <div class="card">
-    <h1>🚀 Obsidian garden</h1>
-    <p>
-      Portfolio website for Ekansh Bajpai<br />
-      Placeholder page for <code>Obisidian</code> notes.
-    </p>
-    <a href="https://github.com/ekansh-bajpai">View on GitHub</a>
+    Full-stack web developer with strong experience in AWS, React, IoT systems,
+    and embedded development. Currently pursuing an MSc in Electrical Systems Engineering
+    at the University of Paderborn.
   </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="card">
+    <strong>MSc – Electrical Systems Engineering</strong><br/>
+    University of Paderborn (2022 – Present)
+  </div>
+  <div class="card">
+    <strong>B.Tech – Electronics & Communication Engineering</strong><br/>
+    MMMUT Gorakhpur (2015 – 2019)<br/>
+    Thesis: Self-Balancing Object Tracking Robot
+  </div>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="card">
+    <strong>Hummingwave Technologies</strong> (2019 – 2021)<br/>
+    Full-Stack Web Developer
+    <ul>
+      <li>Built fintech web apps using React & AWS</li>
+      <li>Worked with Lambda, DynamoDB, Cognito, CloudFront</li>
+      <li>Client requirement analysis & architecture design</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <strong>Sabre Corporation</strong> (2021)<br/>
+    Software Engineer
+    <ul>
+      <li>Migrated applications from OCP to GKE</li>
+      <li>Production support & ticket resolution</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Key Projects</h2>
+
+  <div class="card">
+    <strong>Self-Balancing Object Tracking Robot</strong><br/>
+    Raspberry Pi, OpenCV, PID Control
+    <ul>
+      <li>Computer-vision-based object following</li>
+      <li>Live video streaming + telemetry dashboard</li>
+    </ul>
+    <a href="https://www.hackster.io/ekanshbajpai712">Project Link</a>
+  </div>
+
+  <div class="card">
+    <strong>MoneyWorld Asia – Money Remittance Platform</strong><br/>
+    React, AWS, DynamoDB
+    <ul>
+      <li>Customer & back-office web apps</li>
+      <li>Reports via JasperReports</li>
+      <li>MYInfo third-party API integration</li>
+    </ul>
+    <a href="https://forex.moneyworld.com.sg">Live Site</a>
+  </div>
+
+  <div class="card">
+    <strong>KRYPTOFIN</strong><br/>
+    Crypto-collateralized loan platform
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="card tags">
+    <span>Java</span><span>Spring Boot</span><span>React</span>
+    <span>AWS</span><span>Lambda</span><span>DynamoDB</span>
+    <span>JavaScript</span><span>HTML</span><span>CSS</span>
+    <span>Python</span><span>OpenCV</span><span>IoT</span>
+    <span>Raspberry Pi</span><span>Arduino</span>
+  </div>
+</section>
+
+<footer>
+  © 2026 Ekansh Bajpai · Built with ❤️
+</footer>
+
 </body>
 </html>
