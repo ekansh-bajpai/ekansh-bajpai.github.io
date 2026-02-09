@@ -8,7 +8,11 @@
     "email": "ekansh.bajpai712@gmail.com",
     "github": "ekansh-bajpai",
     "linkedin": "ekanshbajpai",
-    "resumeUrl": "#"
+    "resumeUrl": {
+      "aiml": "#",
+      "robotics": "#",
+      "fullstack": "#"
+    }
   },
   "education": [
     {
@@ -43,7 +47,7 @@
   "tabs": [
     {
       "id": "aiml",
-      "name": "AI/ML Development",
+      "name": "AI/ML/RAG Development",
       "experience": [
         {
           "role": "Student Assistant",
@@ -185,7 +189,7 @@
     },
     {
       "id": "robotics",
-      "name": "Robotics & SLAM",
+      "name": "Robotics Development",
       "experience": [
         {
           "role": "Robotics Engineering Intern",

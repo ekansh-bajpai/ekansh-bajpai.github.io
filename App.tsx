@@ -6,6 +6,7 @@ import EducationSection from './components/Education';
 import ExperienceTabs from './components/ExperienceTabs';
 import Contact from './components/Contact';
 import DetailModal from './components/DetailModal';
+import DownloadCVModal from './components/DownloadCVModal';
 // import StatsSection from './components/Stats'; // optional, uncomment if needed
 
 // 🔹 Theme helpers
@@ -24,6 +25,7 @@ const App: React.FC = () => {
   const [data, setData] = useState<PortfolioData | null>(null);
   const [activeTab, setActiveTab] = useState<string>('');
   const [loading, setLoading] = useState(true);
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
 
   const [selectedItem, setSelectedItem] = useState<{
     data: Project | Education | Experience;
@@ -46,7 +48,7 @@ const App: React.FC = () => {
 
   // Load portfolio JSON data
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/data.json')
+    fetch('data.json')
       .then(res => res.json())
       .then((json: PortfolioData) => {
         setData(json);
@@ -95,6 +97,22 @@ const App: React.FC = () => {
     document.body.className = `${styles.body} transition-all duration-300`;
   }, [styles]);
 
+  const handleDownloadConfirm = () => {
+    if (data) {
+      const link = document.createElement('a');
+      link.href = data.personalInfo.resumeUrl[activeTab];
+      link.target = "_blank"
+      link.download = `Ekansh_Bajpai_Resume_${activeTab}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
+  const activeTabName = useMemo(() => {
+    return data?.tabs.find(t => t.id === activeTab)?.name || "Default";
+  }, [data, activeTab]);
+
   if (loading || !data) {
     return (
       <div
@@ -124,7 +142,7 @@ const App: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
           <aside className="w-full md:w-72 lg:w-80 flex-shrink-0 space-y-6">
             <Hero data={data.personalInfo} styles={styles} isDark={isDark} />
-            <Contact personalInfo={data.personalInfo} styles={styles} />
+            <Contact personalInfo={data.personalInfo} onDownloadClick={() => setIsDownloadModalOpen(true)}/>
           </aside>
 
           <div className="flex-grow space-y-12">
@@ -175,6 +193,15 @@ const App: React.FC = () => {
       <DetailModal
         item={selectedItem}
         onClose={() => setSelectedItem(null)}
+        styles={styles}
+        isDark={isDark}
+      />
+
+      <DownloadCVModal 
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+        onConfirm={handleDownloadConfirm}
+        tabName={activeTabName}
         styles={styles}
         isDark={isDark}
       />
