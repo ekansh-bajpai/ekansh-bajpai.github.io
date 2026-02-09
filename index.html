@@ -1,175 +1,83 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ekansh Bajpai | Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 2.5rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin-bottom: 0.3rem;
-    }
-    header p {
-      opacity: 0.85;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1.5rem;
-    }
-    h2 {
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: #0f172a;
-    }
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .tags span {
-      display: inline-block;
-      background: #e2e8f0;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      margin: 0.2rem;
-      font-size: 0.85rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #0f172a;
-      color: white;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Ekansh Bajpai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(128, 128, 128, 0.3);
+            border-radius: 4px;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .animate-blink { animation: blink 1s step-end infinite; }
+        
+        @keyframes gridPan {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        .animate-grid { animation: gridPan 20s linear infinite; }
+
+        /* CRT Scanline effect */
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 100;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: fixed;
+            bottom: 100%;
+            pointer-events: none;
+            animation: scanline 10s linear infinite;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            80% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+
+        .crt-overlay {
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 99;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .cyber-glitch {
+            text-shadow: 2px 2px #ff00ff, -2px -2px #00f3ff;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-
-<header>
-  <h1>Ekansh Bajpai</h1>
-  <p>Full-Stack Developer | AWS | IoT | Embedded Systems</p>
-  <p>
-    📍 Paderborn, Germany · 
-    📧 <a href="mailto:ekansh.bajpai712@gmail.com" style="color:#93c5fd;">Email</a> ·
-    🔗 <a href="https://www.hackster.io/ekanshbajpai712" style="color:#93c5fd;">Hackster</a>
-  </p>
-</header>
-
-<section>
-  <h2>About Me</h2>
-  <div class="card">
-    Full-stack web developer with strong experience in AWS, React, IoT systems,
-    and embedded development. Currently pursuing an MSc in Electrical Systems Engineering
-    at the University of Paderborn.
-  </div>
-</section>
-
-<section>
-  <h2>Education</h2>
-  <div class="card">
-    <strong>MSc – Electrical Systems Engineering</strong><br/>
-    University of Paderborn (2022 – Present)
-  </div>
-  <div class="card">
-    <strong>B.Tech – Electronics & Communication Engineering</strong><br/>
-    MMMUT Gorakhpur (2015 – 2019)<br/>
-    Thesis: Self-Balancing Object Tracking Robot
-  </div>
-</section>
-
-<section>
-  <h2>Professional Experience</h2>
-
-  <div class="card">
-    <strong>Hummingwave Technologies</strong> (2019 – 2021)<br/>
-    Full-Stack Web Developer
-    <ul>
-      <li>Built fintech web apps using React & AWS</li>
-      <li>Worked with Lambda, DynamoDB, Cognito, CloudFront</li>
-      <li>Client requirement analysis & architecture design</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <strong>Sabre Corporation</strong> (2021)<br/>
-    Software Engineer
-    <ul>
-      <li>Migrated applications from OCP to GKE</li>
-      <li>Production support & ticket resolution</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Key Projects</h2>
-
-  <div class="card">
-    <strong>Self-Balancing Object Tracking Robot</strong><br/>
-    Raspberry Pi, OpenCV, PID Control
-    <ul>
-      <li>Computer-vision-based object following</li>
-      <li>Live video streaming + telemetry dashboard</li>
-    </ul>
-    <a href="https://www.hackster.io/ekanshbajpai712">Project Link</a>
-  </div>
-
-  <div class="card">
-    <strong>MoneyWorld Asia – Money Remittance Platform</strong><br/>
-    React, AWS, DynamoDB
-    <ul>
-      <li>Customer & back-office web apps</li>
-      <li>Reports via JasperReports</li>
-      <li>MYInfo third-party API integration</li>
-    </ul>
-    <a href="https://forex.moneyworld.com.sg">Live Site</a>
-  </div>
-
-  <div class="card">
-    <strong>KRYPTOFIN</strong><br/>
-    Crypto-collateralized loan platform
-  </div>
-</section>
-
-<section>
-  <h2>Skills</h2>
-  <div class="card tags">
-    <span>Java</span><span>Spring Boot</span><span>React</span>
-    <span>AWS</span><span>Lambda</span><span>DynamoDB</span>
-    <span>JavaScript</span><span>HTML</span><span>CSS</span>
-    <span>Python</span><span>OpenCV</span><span>IoT</span>
-    <span>Raspberry Pi</span><span>Arduino</span>
-  </div>
-</section>
-
-<footer>
-  © 2026 Ekansh Bajpai · Built with ❤️
-</footer>
-
+<body class="font-sans antialiased overflow-x-hidden">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>

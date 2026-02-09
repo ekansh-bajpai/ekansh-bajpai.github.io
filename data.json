@@ -1,0 +1,538 @@
+
+{
+  "personalInfo": {
+    "name": "Ekansh Bajpai",
+    "title": "Master's Student at University of Paderborn",
+    "about": "Robotics, AI/ML, and Full-Stack Engineer specializing in autonomous systems, SLAM, neuromorphic computing, RAG/GraphRAG AI platforms, and scalable end-to-end solutions, with expertise spanning embedded systems, signal processing, neural networks, and cloud-native applications, currently pursuing an M.Sc. in Electrical Systems Engineering and seeking research-driven, deployable technology opportunities.",
+    "website": "https://ekansh.is-a.dev",
+    "email": "ekansh.bajpai712@gmail.com",
+    "github": "ekansh-bajpai",
+    "linkedin": "ekanshbajpai",
+    "resumeUrl": "#"
+  },
+  "education": [
+    {
+      "degree": "Master of Science in Electrical Systems Engineering",
+      "institution": "University of Paderborn",
+      "year": "In Progress",
+      "focus": "Signal & Information Processing, SLAM, Neural Networks, CNN, SNN",
+      "projectUrl": "https://www.uni-paderborn.de/"
+    },
+    {
+      "degree": "Bachelor of Technology in Electronics and Communications Engineering",
+      "institution": "Madan Mohan Malaviya University of Technology",
+      "year": "2015-2019",
+      "focus": "Robotics, Computer Vision, AI, ML",
+      "projectUrl": "https://www.mmmut.ac.in/"
+    }
+  ],
+  "stats": {
+    "aiml": {
+      "projectsDeployed": "10+",
+      "techStacks": "5+",
+      "specialization": "RAG",
+      "focus": "AI Systems"
+    },
+    "robotics": {
+      "projectsDeployed": "8+",
+      "techStacks": "4+",
+      "specialization": "SLAM",
+      "focus": "Robotics"
+    }
+  },
+  "tabs": [
+    {
+      "id": "aiml",
+      "name": "AI/ML Development",
+      "experience": [
+        {
+          "role": "Student Assistant",
+          "company": "Fraunhofer IEM",
+          "duration": "2024 - Present",
+          "description": "Assisted in developing full-stack and AI/ML solutions, including AI-powered chatbots, and regulatory compliance platforms. Contributed to backend and frontend services, semantic search pipelines, and RAG/GraphRAG pipelines, gaining hands-on experience with FastAPI, LangChain, FAISS, RAG, Graph/Vector databases",
+          "highlights": [
+              "Developed backend microservices and APIs for scalable applications",
+              "Built AI-powered chatbots with context-aware responses",
+              "Implemented semantic search using vector databases (FAISS)",
+              "Created real-time dashboards for monitoring IoT data",
+              "Designed predictive maintenance algorithms for large datasets",
+              "Contributed to RAG pipelines for intelligent knowledge retrieval"
+          ],
+          "projectUrl": "https://www.iem.fraunhofer.de/"
+        },
+        {
+          "role": "Working Student – Frontend Developer",
+          "company": "NFDI4Culture",
+          "duration": "Feb 2023 – Sep 2023",
+          "description": "Worked on the Collana collation tool within a National Research Data Infrastructure project for cultural heritage, focusing on redesigning and extending the frontend with new features.",
+          "highlights": [
+            "Designed and implemented a new version of the Collana collation tool",
+            "Added new features to support cultural data collation workflows",
+            "Improved UI consistency and usability using Angular Material",
+            "Collaborated in a distributed, research-oriented development team"
+          ]
+        }
+
+      ],
+      "skills": [
+        {
+          "category": "Languages",
+          "icon": "💻",
+          "skills": ["Python", "JavaScript", "TypeScript", "Java", "SQL"]
+        },
+        {
+          "category": "Frontend",
+          "icon": "🎨",
+          "skills": ["React.js", "Next.js", "Tailwind CSS", "Material UI", "HTML5/CSS3"]
+        },
+        {
+          "category": "Backend",
+          "icon": "⚙️",
+          "skills": ["Node.js", "FastAPI", "Django", "Express.js", "REST APIs", "GraphQL"]
+        },
+        {
+          "category": "AI & Machine Learning",
+          "icon": "🤖",
+          "skills": ["LLMs", "RAG", "LangChain", "OpenAI API", "HuggingFace", "Agentic AI"]
+        },
+        {
+          "category": "Databases",
+          "icon": "💾",
+          "skills": ["PostgreSQL", "MongoDB", "Redis", "FAISS", "Pinecone"]
+        },
+        {
+          "category": "Cloud & DevOps",
+          "icon": "☁️",
+          "skills": ["AWS", "Docker", "Kubernetes", "CI/CD", "GitHub Actions"]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Normex – Regulatory Compliance Platform",
+          "role": "Full Stack & AI/ML Engineer",
+          "description": "AI-powered platform for regulatory compliance monitoring, document analysis, and policy verification using Generative AI and RAG architecture. Built microservices-based backend with vector database integration for semantic search.",
+          "features": [
+            "Document ingestion pipeline with batch processing",
+            "Semantic search using ChromaDB vector store",
+            "AI-powered compliance chatbot with RAG",
+            "Automated reporting and role-based access control",
+            "Deployed on AWS with Docker containerization"
+          ],
+          "technologies": ["React", "FastAPI", "LangChain", "OpenAI API", "ChromaDB", "PostgreSQL", "AWS", "Docker"]
+        },
+        {
+          "title": "ASEC Backend – AI-Assisted Compliance Platform",
+          "role": "Backend / AI Engineer",
+          "description": "Secure, API-centric backend for Automotive SPICE–aligned systems engineering, providing project and document management, traceability, and LLM-powered compliance analysis using RAG over official guidelines.",
+          "features": [
+            "JWT-based authentication with refresh tokens",
+            "Project-centric document and analysis management",
+            "Rule-driven document classification and validation",
+            "LLM-powered analysis (document, base practice, process assessment)",
+            "RAG pipeline over ISO / A-SPICE guidelines",
+            "End-to-end traceability across projects, work products, and analyses",
+            "Containerized, modular backend architecture"
+          ],
+          "technologies": ["Python", "FastAPI", "MongoDB", "ChromaDB", "OpenAI API", "Docker", "JWT", "bcrypt"]
+        },
+        {
+          "title": "sIEMi – Knowledge Management System",
+          "role": "Knowledge Management / AI Engineer",
+          "description": "AI-driven knowledge management system that captures, structures, and retrieves organizational knowledge using a graph database and NLP-powered analysis of employee responses.",
+          "features": [
+            "Automated knowledge capture via team-focused questions",
+            "NLP analysis and decomposition of answers into structured knowledge units (problem, context, solution, systems, documents, person)",
+            "Graph-based knowledge storage with nodes and edges",
+            "Intelligent retrieval of solutions and relevant experts for new queries",
+            "Dynamic knowledge map showing 'who knows what' and 'how problems were solved'"
+          ],
+          "technologies": ["Neo4j", "OpenAI API", "Python", "Graph Databases", "NLP"]
+        },
+        {
+          "title": "Nexus AI – Generative AI Platform",
+          "role": "Generative AI Engineer",
+          "description": "LLM-powered systems for conversational AI and enterprise knowledge management, combining intent classification, RAG pipelines, hybrid search, and prompt optimization for high-quality automated responses.",
+          "features": [
+            "Conversational chatbot interface with context awareness",
+            "Intent classification and entity extraction",
+            "RAG pipeline for knowledge retrieval and document embeddings",
+            "Hybrid search with semantic and keyword support",
+            "Response caching and performance optimization",
+            "Prompt engineering, tuning, and continuous evaluation",
+            "Multi-user support with access controls"
+          ],
+          "technologies": ["Python", "FastAPI", "OpenAI API", "LangChain", "Pinecone", "FAISS", "PostgreSQL", "Redis"]
+        },
+        {
+          "title": "NFDI4Culture – Collana Collation Tool",
+          "role": "Working Student (Frontend Developer)",
+          "description": "Contributed to a National Research Data Infrastructure sub-project for cultural heritage by redesigning and extending the Collana collation tool with new functionality and improved UI using Angular-based technologies.",
+          "features": [
+            "Redesigned and implemented a new version of the Collana collation tool",
+            "Added new frontend features for cultural data collation workflows",
+            "Improved usability and maintainability of the existing codebase",
+            "Collaborated within a research-driven, distributed team"
+          ],
+          "technologies": ["AngularJS", "Angular Material", "TypeScript", "HTML", "CSS"]
+      }
+
+      ]
+    },
+    {
+      "id": "robotics",
+      "name": "Robotics & SLAM",
+      "experience": [
+        {
+          "role": "Robotics Engineering Intern",
+          "company": "Cellgo GmbH",
+          "duration": "Aug 2022",
+          "description": "Internship focused on embedded communication systems for a carrier robot, implementing standard protocols for reliable sensor data transfer on Arduino-based hardware.",
+          "highlights": [
+            "Implemented I2C, and SPI communication protocols",
+            "Designed a master/slave system for ESP32/Arduino Nano devices",
+            "Designed rules for reliable sensor data transfer",
+            "Integrated communication logic on Arduino hardware",
+            "Supported robotics system development and testing"
+          ]
+        }
+
+      ],
+      "skills": [
+        {
+          "category": "Languages",
+          "icon": "💻",
+          "skills": ["C++", "Python", "Java"]
+        },
+        {
+          "category": "Robotics & SLAM",
+          "icon": "🤖",
+          "skills": ["ROS/ROS2", "Visual SLAM", "Event Cameras", "SNNs", "g2o", "LOAM"]
+        },
+        {
+          "category": "Computer Vision",
+          "icon": "👁️",
+          "skills": ["OpenCV", "Point Clouds", "LIDAR", "IMU Fusion", "CNNs"]
+        },
+        {
+          "category": "Optimization",
+          "icon": "📊",
+          "skills": ["g2o", "SE-Sync", "Pose-Graph Optimization", "Bundle Adjustment"]
+        },
+        {
+          "category": "Sensors",
+          "icon": "📡",
+          "skills": ["Event Cameras", "LIDAR", "IMU", "Stereo Cameras", "Depth Sensors"]
+        },
+        {
+          "category": "Tools & Libraries",
+          "icon": "🛠️",
+          "skills": ["Eigen", "PCL", "PyTorch", "OpenCV", "YAML"]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Master's Thesis | Neuromorphic Event-Based SLAM",
+          "role": "Master's Thesis | University of Paderborn",
+          "description": "Designed a spiking neural network (SNN) based patch selector for event-based visual odometry, replacing CNN-based dense processing with asynchronous neuromorphic computation. Extended VO pipeline into full SLAM system with pose-graph optimization.",
+          "features": [
+            "SNN front-end integrated with DEVO pipeline",
+            "Pose-graph optimization for long-term drift correction",
+            "Loop closure detection implementation",
+            "Benchmarking on MVSEC and EVIMO2 datasets",
+            "Analysis of latency, accuracy under high-speed & HDR conditions"
+          ],
+          "technologies": ["C++", "Python", "ROS", "SNNs", "Event Cameras", "DEVO", "PyTorch"]
+        },
+        {
+          "title": "Master's Project | Autonomous Mapping & SLAM Optimization",
+          "role": "Master's Project | University of Paderborn",
+          "description": "Enhanced LOAM-based SLAM pipeline with IMU pose estimation. Implemented templated C++ architecture for multiple graph optimization backends, integrating g2o and SE-Sync libraries with comprehensive benchmarking.",
+          "features": [
+            "Modular ROS packages with single-responsibility design",
+            "Templated C++ architecture for optimizer backends",
+            "Integration and benchmarking of g2o and SE-Sync",
+            "Wrapper ROS nodes for graph optimization testing",
+            "YAML-based parameter and configuration management"
+          ],
+          "technologies": ["C++", "ROS", "LOAM", "g2o", "SE-Sync", "IMU", "LIDAR"]
+        },
+        {
+          "title": "Visual-Inertial Odometry System",
+          "role": "Personal Project",
+          "description": "Developed robust Visual-Inertial Odometry system combining camera and IMU data for accurate pose estimation.",
+          "features": [
+            "Feature extraction and optical flow tracking",
+            "IMU calibration and preintegration",
+            "Real-time pose estimation pipeline",
+            "Evaluation on EuRoC and TUM datasets"
+          ],
+          "technologies": ["C++", "OpenCV", "Eigen", "ROS", "EKF", "IMU"]
+        },
+        {
+          "title": "Cellgo",
+          "role": "Robotics Engineering Intern",
+          "description": "Developed low-level communication logic for a carrier robot by implementing standard embedded communication protocols to reliably transfer sensor data on an Arduino-based platform.",
+          "features": [
+            "Implemented I2C, and SPI communication protocols",
+            "Designed a master/slave system for ESP32/Arduino Nano devices",
+            "Designed rules for reliable sensor data transfer",
+            "Integrated communication logic on Arduino hardware",
+            "Supported robotics system development and testing"
+          ],
+          "technologies": ["C++", "Arduino", "I2C", "SPI", "Embedded Systems", "Robotics"],
+          "projectUrl": "https://cellgo.io/en/"
+        },
+        {
+          "title": "Custom OLED Ping Pong Game with Facial Avatars",
+          "role": "Personal Project",
+          "description": "Designed and built an interactive OLED-based ping pong game running on a custom PCB with personalized player avatars, integrating image processing, embedded graphics rendering, and microcontroller-based gameplay logic.",
+          "features": [
+            "Custom ping pong gameplay on 128x64 OLED display",
+            "Face-to-bitmap conversion and rendering on microcontroller displays",
+            "Custom PCB design integrating NodeMCU, buttons, and OLED module",
+            "Two-button player control and simple AI opponent logic",
+            "Real-time game physics, scoring, and difficulty scaling",
+            "Embedded graphical rendering using display libraries"
+          ],
+          "technologies": ["Arduino", "C++", "NodeMCU ESP8266", "U8g2 Graphics Library", "OLED Displays", "PCB Design", "Embedded Systems"],
+          "projectUrl": "https://www.hackster.io/ekanshbajpai712/making-a-custom-ping-pong-game-with-people-s-face-in-it-1d9608"
+        },
+        {
+          "title": "Bachelor's Thesis | Self Balancing Object Tracking Robot",
+          "role": "Bachelor's Thesis | Madan Mohan Malaviya University of Technology",
+          "description": "Designed and implemented a two-wheeled self-balancing robot that combines PID-based inverted pendulum control with IMU sensor fusion and Raspberry Pi–based computer vision to autonomously track and follow objects in real time.",
+          "features": [
+            "PID-controlled self-balancing using IMU sensor fusion (MPU6050)",
+            "Real-time tilt estimation and motor feedback control",
+            "Vision-based object detection and centroid tracking with OpenCV",
+            "Autonomous motion control based on visual feedback",
+            "Camera-based color segmentation and contour analysis",
+            "End-to-end integration of control, sensing, and vision modules"
+          ],
+          "technologies": ["Arduino", "C++", "Python", "Raspberry Pi", "OpenCV", "MPU6050 IMU", "PID Control", "L298N Motor Driver", "Embedded Robotics", "Computer Vision"],
+          "projectUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-1-3ddaef",
+          "githubUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-2-4d2c2a"
+        }
+      ]
+    },
+    {
+      "id": "fullstack",
+      "name": "Fullstack Web Development",
+      "experience": [
+        {
+          "role": "Associate Software Developer",
+          "company": "Sabre Corporation",
+          "duration": "Mar 2021 – October 2021",
+          "description": "Application migration and production support in cloud environments.",
+          "highlights": [
+            "Migrated applications from OCP stack to GKE cloud",
+            "Handled support tasks and ticket resolution for the NGP team"
+          ],
+          "projectUrl": "https://www.sabre.com/"
+        },
+        {
+          "role": "Software Engineer",
+          "company": "HummingWave Technologies",
+          "duration": "June 2019 – Feb 2021",
+          "description": "Full-stack web development on AWS and web platforms using ReactJS/AngularJS.",
+          "highlights": [
+            "Contributed to multiple full-stack projects on AWS and web",
+            "Participated in client requirement discussions and feasibility analysis",
+            "Worked on fintech applications including loan platforms with cryptocurrency collateral"
+          ],
+          "projectUrl": "https://hummingwave.com/"
+        }
+      ],
+      "skills": [
+        {
+          "category": "Programming Languages",
+          "icon": "💻",
+          "skills": [
+            "Core Java",
+            "Java 8",
+            "Python"
+          ]
+        },
+        {
+          "category": "Java Technologies",
+          "icon": "☕",
+          "skills": [
+            "Java Collections",
+            "Java Multithreading",
+            "Java Streams",
+            "Spring Boot",
+            "Jtwig"
+          ]
+        },
+        {
+          "category": "Frontend",
+          "icon": "🎨",
+          "skills": [
+            "HTML5",
+            "CSS3",
+            "Vanilla JavaScript",
+            "React JS",
+            "Bootstrap 4",
+            "Knockout JS",
+            "NunJucks"
+          ]
+        },
+        {
+          "category": "Cloud & AWS",
+          "icon": "☁️",
+          "skills": [
+            "AWS Lambda",
+            "DynamoDB",
+            "API Gateway",
+            "S3",
+            "Cognito",
+            "CloudWatch",
+            "SNS",
+            "SES",
+            "IAM",
+            "CloudFront",
+            "Amplify",
+            "EC2",
+            "ElasticSearch",
+            "CloudFormation"
+          ]
+        },
+        {
+          "category": "Databases",
+          "icon": "🗄️",
+          "skills": [
+            "MySQL",
+            "DynamoDB"
+          ]
+        },
+        {
+          "category": "APIs & Integration",
+          "icon": "🔗",
+          "skills": [
+            "REST API",
+            "GraphQL"
+          ]
+        },
+        {
+          "category": "Reporting & Utilities",
+          "icon": "📊",
+          "skills": [
+            "Apache POI",
+            "Jasper Reports"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "MoneyWorld Asia – Money Remit System",
+          "role": "Full-Stack Developer",
+          "description": "Money transfer system supporting multiple currencies.",
+          "features": [
+            "Customer and Back Office web applications built with React JS",
+            "Backend developed using multiple AWS services",
+            "Report generation using JasperReports",
+            "Third-party API integration for user data"
+          ],
+          "technologies": [
+            "React JS",
+            "AWS Lambda",
+            "DynamoDB",
+            "S3",
+            "CloudFront",
+            "Cognito",
+            "CloudWatch",
+            "API Gateway",
+            "Amplify",
+            "EC2",
+            "IAM",
+            "SNS",
+            "SES",
+            "ElasticSearch"
+          ],
+          "projectUrl": "https://moneyworld.com.sg"
+        },
+        {
+          "title": "eTutorWorld",
+          "role": "Full-Stack Developer",
+          "description": "Online tutoring and test preparation platform.",
+          "features": [
+            "Student portal development",
+            "Admin portal development",
+            "Backend development using AWS services"
+          ],
+          "technologies": [
+            "React JS",
+            "ElasticSearch",
+            "S3",
+            "CloudFront"
+          ],
+          "projectUrl": "https://www.etutorworld.com"
+        },
+        {
+          "title": "KRYPTOFIN",
+          "role": "Backend Developer",
+          "description": "Loan management solution with cryptocurrency as collateral.",
+          "features": [
+            "Backend development for Android and iOS applications",
+            "AWS-based service integration"
+          ],
+          "technologies": [
+            "AWS Lambda",
+            "DynamoDB"
+          ],
+          "projectUrl": "https://www.mwacapital.com.sg"
+        },
+        {
+          "title": "STEELMINT",
+          "role": "Frontend Developer",
+          "description": "Information platform for the iron and steel industry.",
+          "features": [
+            "Web UI development for industry data",
+            "Display of commodity prices, tenders, and events"
+          ],
+          "technologies": [
+            "Vanilla JavaScript",
+            "Knockout JS",
+            "NunJucks"
+          ],
+          "projectUrl": "https://www.steelmint.com"
+        },
+        {
+          "title": "College Techfest Web Portal",
+          "role": "Personal Project",
+          "description": "Web portal to increase student interaction during college techfest.",
+          "features": [
+            "Student interaction through requests and invites",
+            "Built-in web chat functionality"
+          ],
+          "technologies": [
+            "PHP",
+            "SQL",
+            "HTML",
+            "CSS",
+            "Javascript"
+          ],
+          "projectUrl": ""
+        },
+        {
+          "title": "IoT Startup Web Portal",
+          "role": "IoT and Web Development intern",
+          "description": "Web portal for monitoring data from custom IoT devices.",
+          "features": [
+            "User registration and login",
+            "Real-time sensor data visualization per account"
+          ],
+          "technologies": [
+            "IoT Systems",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "PHP",
+            "Arduino"
+          ],
+          "projectUrl": "https://www.linkedin.com/company/iradessolt/"
+        }
+      ]
+    }
+  ]
+}
