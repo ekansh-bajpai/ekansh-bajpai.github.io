@@ -236,11 +236,11 @@
       ],
       "projects": [
         {
-          "title": "Neuromorphic Event-Based SLAM",
+          "title": "Neuromorphic Event-Based SLAM (In Progress)",
           "role": "Master's Thesis Student | University of Paderborn",
-          "description": "Designed a spiking neural network (SNN) based patch selector for event-based visual odometry, replacing CNN-based dense processing with asynchronous neuromorphic computation. Extended VO pipeline into full SLAM system with pose-graph optimization.",
+          "description": "Designing a spiking neural network (SNN) based patch selector for event-based visual odometry, replacing CNN-based dense processing with asynchronous neuromorphic computation. Extension of VO pipeline into full SLAM system with pose-graph optimization.",
           "features": [
-            "SNN front-end integrated with DEVO pipeline",
+            "SNN front-end integration with DEVO pipeline",
             "Pose-graph optimization for long-term drift correction",
             "Loop closure detection implementation",
             "Benchmarking on MVSEC and EVIMO2 datasets",

@@ -64,7 +64,9 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
                       {proj.title}
                     </h4>
                   </div>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full border flex-shrink-0 font-medium ${styles.btn}`}>{proj.projectType}</span>
+                  {
+                    proj.projectType ? <span className={`text-[10px] px-2 py-0.5 rounded-full border flex-shrink-0 font-medium ${styles.btn}`}>{proj.projectType}</span> : ""
+                  }
                 </div>
 
                 <p className={`text-xs ${styles.secondaryText} leading-relaxed flex-grow line-clamp-3 mb-1`}>
