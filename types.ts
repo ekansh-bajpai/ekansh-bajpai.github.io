@@ -51,6 +51,7 @@ export interface Project {
   technologies: string[];
   projectUrl?: string;
   githubUrl?: string;
+  projectType?: string;
 }
 
 export interface TabData {

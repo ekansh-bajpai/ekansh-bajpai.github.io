@@ -64,7 +64,7 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
                       {proj.title}
                     </h4>
                   </div>
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full border flex-shrink-0 font-medium ${styles.btn}`}>Public</span>
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full border flex-shrink-0 font-medium ${styles.btn}`}>{proj.projectType}</span>
                 </div>
 
                 <p className={`text-xs ${styles.secondaryText} leading-relaxed flex-grow line-clamp-3 mb-1`}>
@@ -72,19 +72,19 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
                 </p>
 
                 <div className="flex items-center gap-4 mt-auto text-[11px] opacity-80">
-                  {proj.technologies.slice(0, 1).map((tech, i) => (
+                  {proj.technologies.slice(0, 4).map((tech, i) => (
                     <span key={i} className="flex items-center gap-1">
                       <span className={`w-3 h-3 rounded-full ${tech.toLowerCase().includes('react') ? 'bg-[#3178c6]' : tech.toLowerCase().includes('python') ? 'bg-[#3572A5]' : 'bg-[#f1e05a]'}`}></span>
                       <span>{tech}</span>
                     </span>
                   ))}
 
-                  <span className="flex items-center gap-1">
+                  {/* <span className="flex items-center gap-1">
                     <StarIcon className="w-3 h-3" /> 12
                   </span>
                   <span className="flex items-center gap-1">
                     <GitBranchIcon className="w-3 h-3" /> 4
-                  </span>
+                  </span> */}
                 </div>
               </div>
             ))}

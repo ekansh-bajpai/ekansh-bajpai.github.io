@@ -118,7 +118,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen relative flex flex-col">
-      <Header isDark={isDark} setIsDark={setIsDark} styles={styles} />
+      <Header isDark={isDark} setIsDark={setIsDark} styles={styles} name={data.personalInfo.name} />
 
       <main className="flex-grow container mx-auto px-4 md:px-8 py-8 md:py-10 max-w-7xl">
         <div className="flex flex-col md:flex-row gap-8 lg:gap-12">

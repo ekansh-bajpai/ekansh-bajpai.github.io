@@ -118,7 +118,8 @@
             "Automated reporting and role-based access control",
             "Deployed on AWS with Docker containerization"
           ],
-          "technologies": ["React", "FastAPI", "LangChain", "OpenAI API", "ChromaDB", "PostgreSQL", "AWS", "Docker"]
+          "technologies": ["React", "FastAPI", "LangChain", "OpenAI API", "ChromaDB", "PostgreSQL", "AWS", "Docker"],
+          "projectType": "Fraunhofer IEM"
         },
         {
           "title": "ASEC Backend – AI-Assisted Compliance Platform",
@@ -133,7 +134,8 @@
             "End-to-end traceability across projects, work products, and analyses",
             "Containerized, modular backend architecture"
           ],
-          "technologies": ["Python", "FastAPI", "MongoDB", "ChromaDB", "OpenAI API", "Docker", "JWT", "bcrypt"]
+          "technologies": ["Python", "FastAPI", "MongoDB", "ChromaDB", "OpenAI API", "Docker", "JWT", "bcrypt"],
+          "projectType": "Fraunhofer IEM"
         },
         {
           "title": "sIEMi – Knowledge Management System",
@@ -146,7 +148,8 @@
             "Intelligent retrieval of solutions and relevant experts for new queries",
             "Dynamic knowledge map showing 'who knows what' and 'how problems were solved'"
           ],
-          "technologies": ["Neo4j", "OpenAI API", "Python", "Graph Databases", "NLP"]
+          "technologies": ["Neo4j", "OpenAI API", "Python", "Graph Databases", "NLP"],
+          "projectType": "Fraunhofer IEM"
         },
         {
           "title": "Nexus AI – Generative AI Platform",
@@ -161,7 +164,8 @@
             "Prompt engineering, tuning, and continuous evaluation",
             "Multi-user support with access controls"
           ],
-          "technologies": ["Python", "FastAPI", "OpenAI API", "LangChain", "Pinecone", "FAISS", "PostgreSQL", "Redis"]
+          "technologies": ["Python", "FastAPI", "OpenAI API", "LangChain", "Pinecone", "FAISS", "PostgreSQL", "Redis"],
+          "projectType": "Fraunhofer IEM"
         },
         {
           "title": "NFDI4Culture – Collana Collation Tool",
@@ -173,7 +177,8 @@
             "Improved usability and maintainability of the existing codebase",
             "Collaborated within a research-driven, distributed team"
           ],
-          "technologies": ["AngularJS", "Angular Material", "TypeScript", "HTML", "CSS"]
+          "technologies": ["AngularJS", "Angular Material", "TypeScript", "HTML", "CSS"],
+          "projectType": "UPB"
       }
 
       ]
@@ -231,8 +236,8 @@
       ],
       "projects": [
         {
-          "title": "Master's Thesis | Neuromorphic Event-Based SLAM",
-          "role": "Master's Thesis | University of Paderborn",
+          "title": "Neuromorphic Event-Based SLAM",
+          "role": "Master's Thesis Student | University of Paderborn",
           "description": "Designed a spiking neural network (SNN) based patch selector for event-based visual odometry, replacing CNN-based dense processing with asynchronous neuromorphic computation. Extended VO pipeline into full SLAM system with pose-graph optimization.",
           "features": [
             "SNN front-end integrated with DEVO pipeline",
@@ -241,7 +246,8 @@
             "Benchmarking on MVSEC and EVIMO2 datasets",
             "Analysis of latency, accuracy under high-speed & HDR conditions"
           ],
-          "technologies": ["C++", "Python", "ROS", "SNNs", "Event Cameras", "DEVO", "PyTorch"]
+          "technologies": ["C++", "Python", "ROS", "SNNs", "Event Cameras", "DEVO", "PyTorch"],
+          "projectType": "Master's Thesis"
         },
         {
           "title": "Master's Project | Autonomous Mapping & SLAM Optimization",
@@ -254,7 +260,8 @@
             "Wrapper ROS nodes for graph optimization testing",
             "YAML-based parameter and configuration management"
           ],
-          "technologies": ["C++", "ROS", "LOAM", "g2o", "SE-Sync", "IMU", "LIDAR"]
+          "technologies": ["C++", "ROS", "LOAM", "g2o", "SE-Sync", "IMU", "LIDAR"],
+          "projectType": "Master's Project"
         },
         {
           "title": "Visual-Inertial Odometry System",
@@ -280,7 +287,8 @@
             "Supported robotics system development and testing"
           ],
           "technologies": ["C++", "Arduino", "I2C", "SPI", "Embedded Systems", "Robotics"],
-          "projectUrl": "https://cellgo.io/en/"
+          "projectUrl": "https://cellgo.io/en/",
+          "projectType": "Internship"
         },
         {
           "title": "Custom OLED Ping Pong Game with Facial Avatars",
@@ -295,11 +303,12 @@
             "Embedded graphical rendering using display libraries"
           ],
           "technologies": ["Arduino", "C++", "NodeMCU ESP8266", "U8g2 Graphics Library", "OLED Displays", "PCB Design", "Embedded Systems"],
-          "projectUrl": "https://www.hackster.io/ekanshbajpai712/making-a-custom-ping-pong-game-with-people-s-face-in-it-1d9608"
+          "projectUrl": "https://www.hackster.io/ekanshbajpai712/making-a-custom-ping-pong-game-with-people-s-face-in-it-1d9608",
+          "projectType": "Personal"
         },
         {
           "title": "Bachelor's Thesis | Self Balancing Object Tracking Robot",
-          "role": "Bachelor's Thesis | Madan Mohan Malaviya University of Technology",
+          "role": "Bachelor's Thesis Student | Madan Mohan Malaviya University of Technology",
           "description": "Designed and implemented a two-wheeled self-balancing robot that combines PID-based inverted pendulum control with IMU sensor fusion and Raspberry Pi–based computer vision to autonomously track and follow objects in real time.",
           "features": [
             "PID-controlled self-balancing using IMU sensor fusion (MPU6050)",
@@ -311,7 +320,8 @@
           ],
           "technologies": ["Arduino", "C++", "Python", "Raspberry Pi", "OpenCV", "MPU6050 IMU", "PID Control", "L298N Motor Driver", "Embedded Robotics", "Computer Vision"],
           "projectUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-1-3ddaef",
-          "githubUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-2-4d2c2a"
+          "githubUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-2-4d2c2a",
+          "projectType": "Bachelor's Thesis"
         }
       ]
     },
