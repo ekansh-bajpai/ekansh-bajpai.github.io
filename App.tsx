@@ -46,7 +46,7 @@ const App: React.FC = () => {
 
   // Load portfolio JSON data
   useEffect(() => {
-    fetch('./data.json')
+    fetch('https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/data.json')
       .then(res => res.json())
       .then((json: PortfolioData) => {
         setData(json);
