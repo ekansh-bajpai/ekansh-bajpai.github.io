@@ -9,9 +9,9 @@
     "github": "ekansh-bajpai",
     "linkedin": "ekanshbajpai",
     "resumeUrl": {
-      "aiml": "#",
-      "robotics": "#",
-      "fullstack": "#"
+      "aiml": "https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/pdfs/ML_AI_Engineer.pdf",
+      "robotics": "https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/pdfs/Robotics_Engineer.pdf",
+      "fullstack": "https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/pdfs/Full_Stack_Developer.pdf"
     }
   },
   "education": [
