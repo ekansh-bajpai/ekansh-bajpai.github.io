@@ -192,6 +192,19 @@
       "name": "Robotics Development",
       "experience": [
         {
+  "role": "Student Assistant (SHK)",
+  "company": "Regelungs- und Automatisierungstechnik (RAT), University of Paderborn",
+  "duration": "Apr 2026 – Present",
+  "description": "Student assistant supporting the course 'Nonlinear Control of Autonomous and Robotic Systems', focusing on teaching assistance, and practical implementation of nonlinear control techniques.",
+  "highlights": [
+    "Assisted in teaching nonlinear dynamical systems, including system behavior, stability, and dynamics",
+    "Supported students in stability analysis using Lyapunov-based methods",
+    "Guided implementation of nonlinear control techniques such as feedback linearization and sliding mode control",
+    "Helped supervise and support term projects involving practical nonlinear controller design",
+    "Contributed to course materials and tutorials on autonomous and robotic system control"
+  ]
+},
+        {
           "role": "Robotics Engineering Intern",
           "company": "Cellgo GmbH",
           "duration": "Aug 2022",
