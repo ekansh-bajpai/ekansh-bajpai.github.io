@@ -193,6 +193,20 @@
       "experience": [
         {
   "role": "Student Assistant (SHK)",
+  "company": "Stratosfare - Fraunhofer IEM",
+  "duration": "Sep 2026 – Present",
+  "description": "Student assistant working on humanoid robotics, teleoperation, and whole-body control, with a focus on deploying and evaluating robotics frameworks on real humanoid platforms.",
+  "highlights": [
+    "Completed the full teleoperation workflow from the GR00T robotics tutorial on real humanoid robots, including deployment and hardware integration on the Unitree G1 and THOR platforms",
+    "Set up and configured the NVIDIA GR00T WholeBodyControl framework for humanoid robot control",
+    "Implemented and validated the initial stages of the WholeBodyControl pipeline, including environment setup, robot configuration, and system integration",
+    "Prepared the data collection pipeline required for training and whole-body control, with the setup completed up to the data collection stage",
+    "Worked hands-on with real humanoid robot hardware, integrating software, control pipelines, and teleoperation components",
+    "Investigated and implemented techniques for whole-body control and coordinated motion generation for humanoid robots"
+  ]
+},
+        {
+  "role": "Student Assistant (SHK)",
   "company": "Regelungs- und Automatisierungstechnik (RAT), University of Paderborn",
   "duration": "Apr 2026 – Present",
   "description": "Student assistant supporting the course 'Nonlinear Control of Autonomous and Robotic Systems', focusing on teaching assistance, and practical implementation of nonlinear control techniques.",
