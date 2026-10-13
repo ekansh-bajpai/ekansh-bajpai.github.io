@@ -5,6 +5,8 @@ export type ThemeType = 'github';
 export interface LinkItem {
   label: string;
   url: string;
+  /** private repository: shown with a lock and "contact for access"; clicking e-mails an access request */
+  private?: boolean;
 }
 
 /** Optional image / GIF / video shown on cards and in the detail modal. */

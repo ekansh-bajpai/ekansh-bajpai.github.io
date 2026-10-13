@@ -4,6 +4,7 @@ import Header from './components/Header';
 import DetailModal from './components/DetailModal';
 import DownloadCVModal from './components/DownloadCVModal';
 import ProfileLayout from './layouts/ProfileLayout';
+import { ContactEmailContext } from './components/LinkButtons';
 
 // import StatsSection from './components/Stats'; // optional, uncomment if needed
 
@@ -124,6 +125,7 @@ const App: React.FC = () => {
   }
 
   return (
+    <ContactEmailContext.Provider value={data.personalInfo.email}>
     <div id="top" className="min-h-screen relative flex flex-col">
       <Header isDark={isDark} setIsDark={toggleTheme} styles={styles} name={data.personalInfo.name} photo={data.personalInfo.photo} />
 
@@ -165,6 +167,7 @@ const App: React.FC = () => {
         isDark={isDark}
       />
     </div>
+    </ContactEmailContext.Provider>
   );
 };
 
