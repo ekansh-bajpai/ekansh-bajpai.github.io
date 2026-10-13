@@ -68,7 +68,7 @@ export interface Experience {
   description: string;
   highlights?: string[];
   links?: LinkItem[];
-  media?: Media;
+  media?: Media | Media[];
   projectUrl?: string;
   githubUrl?: string;
 }
@@ -87,7 +87,7 @@ export interface Project {
   technologies: string[];
   metrics?: string[];
   links?: LinkItem[];
-  media?: Media;
+  media?: Media | Media[];
   /** shown as a wide spotlight card at the top of its tab */
   featured?: boolean;
   projectUrl?: string;

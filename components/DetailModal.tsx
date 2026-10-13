@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Project, Education, Experience, LinkItem, Media } from '../types';
-import { LinkButtons, MediaView } from './LinkButtons';
+import { LinkButtons, MediaView, mediaList } from './LinkButtons';
 
 import {
   XIcon,
@@ -97,7 +97,7 @@ const DetailModal: React.FC<DetailModalProps> = ({
   let projectUrl = '';
   let githubUrl = '';
   let links: LinkItem[] = [];
-  let media: Media | undefined;
+  let media: Media[] = [];
   let metrics: string[] = [];
   let facts: { label: string; value: string }[] = [];
 
@@ -112,7 +112,7 @@ const DetailModal: React.FC<DetailModalProps> = ({
     projectUrl = p.projectUrl || '';
     githubUrl = p.githubUrl || '';
     links = p.links || [];
-    media = p.media;
+    media = mediaList(p.media);
     metrics = p.metrics || [];
   } else if (type === 'experience') {
     const e = data as Experience;
@@ -125,7 +125,7 @@ const DetailModal: React.FC<DetailModalProps> = ({
     projectUrl = e.projectUrl || '';
     githubUrl = e.githubUrl || '';
     links = e.links || [];
-    media = e.media;
+    media = mediaList(e.media);
   } else if (type === 'education') {
     const ed = data as Education;
     title = ed.degree;
@@ -182,14 +182,16 @@ const DetailModal: React.FC<DetailModalProps> = ({
 
         {/* Content */}
         <div className="flex-grow overflow-y-auto p-6 space-y-8">
-          {media && (
-            <figure className="space-y-2">
-              <MediaView media={media} controls className="w-full max-h-96 object-contain rounded-md border border-line bg-black" />
-              {media.caption && (
-                <figcaption className={`text-xs ${styles.secondaryText}`}>{media.caption}</figcaption>
-              )}
+          {media.map((m, i) => (
+            <figure key={i} className="space-y-2">
+              <MediaView
+                media={m}
+                controls
+                className={`w-full max-h-96 object-contain rounded-md border border-line ${m.type === 'image' ? 'bg-white p-2' : 'bg-black'}`}
+              />
+              {m.caption && <figcaption className={`text-xs ${styles.secondaryText}`}>{m.caption}</figcaption>}
             </figure>
-          )}
+          ))}
 
           <section className="space-y-3">
             <h3 className="text-sm font-bold">Overview</h3>

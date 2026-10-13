@@ -23,6 +23,9 @@ export const LinkButtons: React.FC<{ links: LinkItem[]; styles: any; small?: boo
   </div>
 );
 
+/** `media` may be one item or a list; always work with a list. */
+export const mediaList = (m?: Media | Media[]): Media[] => (m ? (Array.isArray(m) ? m : [m]) : []);
+
 /** Image / GIF or muted looping video. */
 export const MediaView: React.FC<{ media: Media; className?: string; controls?: boolean }> = ({ media, className, controls }) =>
   media.type === 'video' ? (

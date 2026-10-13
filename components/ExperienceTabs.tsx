@@ -2,7 +2,7 @@ import React from 'react';
 import { TabData, Project, Experience } from '../types';
 import Skills from './Skills';
 import { FolderIcon, ExternalLinkIcon, SparklesIcon } from 'lucide-react';
-import { LinkButtons, MediaView } from './LinkButtons';
+import { LinkButtons, MediaView, mediaList } from './LinkButtons';
 import { TechDots, Metrics } from './ui';
 
 const SectionTitle: React.FC<{ id: string; children: React.ReactNode }> = ({ id, children }) => (
@@ -55,11 +55,19 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
           onClick={() => onProjectClick?.(proj)}
           className={`relative rounded-xl border overflow-hidden cursor-pointer group transition-all duration-200 ${styles.card}`}
         >
-          <div className={`grid grid-cols-1 ${proj.media ? 'lg:grid-cols-[1.1fr,1fr]' : ''}`}>
-            {proj.media && (
-              <div className="bg-black flex items-center">
-                <MediaView media={proj.media} className="w-full h-full max-h-80 object-contain" />
-              </div>
+          {/* images (e.g. a results chart): full width on top; first video: beside the text */}
+          {mediaList(proj.media).filter((m) => m.type === 'image').map((m, i) => (
+            <figure key={i} className="bg-white p-3 sm:p-4 border-b border-line">
+              <MediaView media={m} className="w-full h-auto" />
+            </figure>
+          ))}
+          {(() => { const video = mediaList(proj.media).find((m) => m.type === 'video'); return (
+          <div className={`grid grid-cols-1 ${video ? 'lg:grid-cols-[1.1fr,1fr]' : ''}`}>
+            {video && (
+              <figure className="bg-black flex flex-col justify-center">
+                <MediaView media={video} className="w-full max-h-80 object-contain" />
+                {video.caption && <figcaption className="px-3 py-2 text-[11px] leading-snug text-white/70">{video.caption}</figcaption>}
+              </figure>
             )}
             <div className="p-5 sm:p-6 flex flex-col gap-3">
               <div className="flex flex-wrap items-center gap-2">
@@ -81,6 +89,7 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
               </div>
             </div>
           </div>
+          ); })()}
         </article>
       ))}
 
@@ -109,9 +118,9 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
                   )}
                 </div>
 
-                {proj.media && (
+                {mediaList(proj.media)[0] && (
                   <div className="rounded overflow-hidden border border-line bg-black/5">
-                    <MediaView media={proj.media} className="w-full h-40 object-cover" />
+                    <MediaView media={mediaList(proj.media)[0]} className="w-full h-40 object-cover" />
                   </div>
                 )}
 

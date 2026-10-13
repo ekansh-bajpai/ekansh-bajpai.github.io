@@ -50,15 +50,17 @@ Bachelor's thesis: self-balancing object-tracking robot (PID-controlled inverted
 \section{Research experience}
 \entry{Master's thesis research}{completed Oct 2026}{Automatic Control Group (RAT), Paderborn University}{%
 \begin{itemize}
-\item Replaced the CNN patch selector of DEVO (Deep Event Visual Odometry) with spiking neural networks trained with
-      surrogate gradients; compared two temporal encodings (replayed voxel grid, time-surface frames) in 150 evaluation runs.
+\item Core: replaced the CNN patch selector of the learned event-based visual odometry pipeline DEVO with spiking
+      neural networks trained with surrogate gradients; compared two temporal encodings (replayed voxel grid, time-surface
+      frames) against CNN baselines in 150 visual-odometry runs.
 \item On MVSEC, the spiking selector achieved about $2\times$ lower absolute trajectory error and $10\times$ smaller spread
       than the CNN baselines; on held-out TartanAir both viable spiking variants beat both CNNs.
 \item Showed with a same-data CNN control that the remaining gap on fast drone-racing motion (UZH-FPV) comes from the
       training data, not from spiking computation.
 \item Generated and publicly released \textbf{TartanEvents}, a 1.3\,TB simulated event-camera training dataset.
-\item Built \textbf{SuperEventSLAM}, the first graph-based SLAM back-end for DEVO (keyframes, SuperEvent features,
-      three-stage loop verification, g2o pose-graph optimization; 36.7 FPS end to end).
+\item Extension: built \textbf{SuperEventSLAM}, the first graph-based SLAM back-end for DEVO (keyframes, SuperEvent
+      features, three-stage loop verification, g2o pose-graph optimization). The pipeline runs end to end at 36.7 FPS;
+      loop verification is not yet reliable, so drift reduction is future work.
 \end{itemize}}
 \entry{Student assistant, humanoid robot learning}{Sep 2026 -- present}{Stratosfare -- Fraunhofer IEM, Paderborn}{%
 \begin{itemize}
