@@ -104,6 +104,20 @@
               "url": "https://huggingface.co/datasets/upb-rat-ekansh/TartanEventsLeft_wo_upsampling"
             },
             {
+              "label": "SNN-DEVO code",
+              "url": "https://github.com/ekansh-bajpai/snn-devo",
+              "private": true
+            },
+            {
+              "label": "devo-vo (portable DEVO)",
+              "url": "https://github.com/ekansh-bajpai/devo-vo"
+            },
+            {
+              "label": "SuperEventSLAM (extension)",
+              "url": "https://github.com/ekansh-bajpai/supereventslam",
+              "private": true
+            },
+            {
               "label": "Visualiser",
               "url": "https://github.com/ekansh-bajpai/pangolin-python-viz"
             }
@@ -301,6 +315,20 @@
             {
               "label": "TartanEvents dataset",
               "url": "https://huggingface.co/datasets/upb-rat-ekansh/TartanEventsLeft_wo_upsampling"
+            },
+            {
+              "label": "SNN-DEVO code",
+              "url": "https://github.com/ekansh-bajpai/snn-devo",
+              "private": true
+            },
+            {
+              "label": "devo-vo (portable DEVO)",
+              "url": "https://github.com/ekansh-bajpai/devo-vo"
+            },
+            {
+              "label": "SuperEventSLAM (extension)",
+              "url": "https://github.com/ekansh-bajpai/supereventslam",
+              "private": true
             },
             {
               "label": "Visualiser (pangolin-python-viz)",
