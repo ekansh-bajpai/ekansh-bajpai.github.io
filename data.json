@@ -200,7 +200,6 @@
             "ROS/ROS2",
             "Visual SLAM",
             "Visual Odometry",
-            "Event Cameras",
             "SNNs",
             "g2o",
             "LOAM",
@@ -218,7 +217,6 @@
           "skills": [
             "OpenCV",
             "Point Clouds",
-            "LIDAR",
             "IMU Fusion",
             "CNNs",
             "Feature Tracking",
@@ -234,10 +232,6 @@
             "Feedback Linearization",
             "Sliding Mode Control",
             "Lyapunov Stability",
-            "Pose-Graph Optimization",
-            "Bundle Adjustment",
-            "g2o",
-            "SE-Sync",
             "Minimum-Snap Trajectories"
           ]
         },
@@ -245,7 +239,6 @@
           "category": "Sensors",
           "icon": "📡",
           "skills": [
-            "Event Cameras",
             "LIDAR",
             "IMU",
             "Stereo Cameras",
@@ -259,7 +252,6 @@
             "Eigen",
             "PCL",
             "PyTorch",
-            "OpenCV",
             "YAML",
             "ROS 2",
             "Pangolin",
@@ -784,7 +776,6 @@
           "icon": "☁️",
           "skills": [
             "AWS Lambda",
-            "DynamoDB",
             "API Gateway",
             "S3",
             "Cognito",

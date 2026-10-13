@@ -160,7 +160,7 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
 
       {/* Skills */}
       <div id="skills" className="scroll-mt-28">
-        <Skills skills={currentTab.skills} styles={styles} />
+        <Skills skills={currentTab.skills} styles={styles} projects={currentTab.projects} />
       </div>
     </div>
   );
