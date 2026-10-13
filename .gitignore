@@ -1,2 +1,7 @@
 node_modules
 dist
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.pdf
+__pycache__/

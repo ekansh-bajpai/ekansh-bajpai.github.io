@@ -1,26 +1,45 @@
 {
   "personalInfo": {
     "name": "Ekansh Bajpai",
-    "title": "M.Sc. Electrical Systems Engineering Student | Robotics & AI Engineer",
-    "about": "M.Sc. Electrical Systems Engineering student at the University of Paderborn working at the intersection of robotics, AI, and autonomous systems. Hands-on experience in humanoid robot teleoperation, whole-body control, SLAM, computer vision, neuromorphic computing, and AI-driven software systems, with experience spanning research prototypes, real robot platforms, and deployable applications.",
+    "photo": "/media/profile.jpg",
+    "title": "Robotics & Event-Based Vision | M.Sc. Electrical Systems Engineering, Paderborn University",
+    "about": "Robotics researcher working on event-based vision and humanoid robot learning. M.Sc. Electrical Systems Engineering, Paderborn University, with a master's thesis graded 1.0.",
+    "aboutPoints": [
+      "Thesis: a spiking neural network inside DEVO, a learned event-based visual odometry pipeline, extended to SLAM",
+      "Now: training and deploying learning-based manipulation on the Unitree G1 humanoid with NVIDIA GR00T",
+      "Experience: humanoid teleoperation and whole-body control · SLAM · computer vision · neuromorphic computing · nonlinear control · AI-driven software systems",
+      "Scope: from research prototypes to real robot platforms and deployable applications"
+    ],
     "website": "https://ekansh.is-a.dev",
     "email": "ekansh.bajpai712@gmail.com",
     "github": "ekansh-bajpai",
     "linkedin": "ekanshbajpai",
     "resumeUrl": {
+      "research": "https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/pdfs/Research_CV.pdf",
       "aiml": "https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/pdfs/ML_AI_Engineer.pdf",
       "robotics": "https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/pdfs/Robotics_Engineer.pdf",
       "fullstack": "https://raw.githubusercontent.com/ekansh-bajpai/ekansh-bajpai.github.io/refs/heads/main/pdfs/Full_Stack_Developer.pdf"
-    }
+    },
+    "location": "Paderborn, Germany",
+    "researchInterests": [
+      "Event-based vision",
+      "Neuromorphic computing (SNNs)",
+      "Visual odometry & SLAM",
+      "Humanoid robot learning",
+      "Imitation learning & VLAs",
+      "Nonlinear control"
+    ],
+    "huggingface": "https://huggingface.co/upb-rat-ekansh"
   },
-
   "education": [
     {
       "degree": "Master of Science in Electrical Systems Engineering",
       "institution": "University of Paderborn",
-      "year": "In Progress",
-      "focus": "Signal & Information Processing, SLAM, Neural Networks, CNN, SNN",
-      "projectUrl": "https://www.uni-paderborn.de/"
+      "year": "2026",
+      "focus": "Signal & Information Processing, SLAM, Neural Networks, CNN, SNN, Event-Based Vision",
+      "projectUrl": "https://www.uni-paderborn.de/",
+      "grade": "Thesis grade 1.0",
+      "thesis": "Exploring Neuromorphic Front-Ends for Event-Based SLAM"
     },
     {
       "degree": "Bachelor of Technology in Electronics and Communications Engineering",
@@ -30,7 +49,6 @@
       "projectUrl": "https://www.mmmut.ac.in/"
     }
   ],
-
   "stats": {
     "aiml": {
       "projectsDeployed": "10+",
@@ -45,12 +63,442 @@
       "focus": "SLAM • Perception • Control • Humanoid Robotics"
     }
   },
-
+  "news": [
+    {
+      "date": "Oct 2026",
+      "text": "Defended my master's thesis \"Exploring Neuromorphic Front-Ends for Event-Based SLAM\", graded 1.0."
+    },
+    {
+      "date": "Sep 2026",
+      "text": "Demonstrated a GR00T-trained Unitree G1 picking an object and placing it in a container at a 3-day workshop; guided attendees through humanoid teleoperation."
+    },
+    {
+      "date": "Sep 2026",
+      "text": "Started at Stratosfare (Fraunhofer IEM) on humanoid robot learning with the Unitree G1."
+    },
+    {
+      "date": "Apr 2026",
+      "text": "Teaching assistant for \"Nonlinear Control of Autonomous and Robotic Systems\" (RAT, Paderborn University)."
+    }
+  ],
   "tabs": [
+    {
+      "id": "robotics",
+      "name": "Robotics Research",
+      "experience": [
+        {
+          "role": "Master's Thesis Researcher",
+          "company": "Regelungs- und Automatisierungstechnik (RAT), University of Paderborn",
+          "duration": "Completed Oct 2026",
+          "description": "Thesis \"Exploring Neuromorphic Front-Ends for Event-Based SLAM\", graded 1.0: a controlled study of spiking neural networks inside a learned event-based visual odometry pipeline, plus a SLAM back-end.",
+          "highlights": [
+            "Replaced the CNN patch selector of DEVO (Deep Event Visual Odometry) with spiking neural networks trained with surrogate gradients",
+            "On MVSEC: about 2x lower trajectory error (ATE) and 10x smaller spread across runs than the CNN baselines",
+            "Traced the remaining gap on fast drone-racing motion (UZH-FPV) to training data rather than spikes, with a same-data CNN control",
+            "Generated and publicly released TartanEvents, a 1.3 TB simulated event-camera training dataset",
+            "Built SuperEventSLAM, the first graph-based SLAM back-end for DEVO (keyframes, three-stage loop verification, g2o pose graph)"
+          ],
+          "links": [
+            {
+              "label": "TartanEvents dataset",
+              "url": "https://huggingface.co/datasets/upb-rat-ekansh/TartanEventsLeft_wo_upsampling"
+            },
+            {
+              "label": "Visualiser",
+              "url": "https://github.com/ekansh-bajpai/pangolin-python-viz"
+            }
+          ]
+        },
+        {
+          "role": "Student Assistant (SHK) – Humanoid Robotics",
+          "company": "Stratosfare - Fraunhofer IEM",
+          "duration": "Sep 2026 – Present",
+          "description": "Building learning-based manipulation and whole-body control for the Unitree G1 humanoid with NVIDIA's GR00T stack, from teleoperated data collection through VLA fine-tuning to deployment on the real robot (onboard compute: NVIDIA Jetson AGX Thor).",
+          "highlights": [
+            "Implemented NVIDIA's GR00T end-to-end workflow on a real Unitree G1: teleoperation, demonstration recording, LeRobot dataset export, GR00T N1.7 VLA fine-tuning, LEAPP export and deployment via NVIDIA Jetson AGX Thor",
+            "Set up and integrated NVIDIA GR00T WholeBodyControl for humanoid robot control",
+            "Configured the software, robot interfaces, and runtime environment required for whole-body control experiments",
+            "Set up NVLabs GR00T-WholeBodyControl (GEAR-SONIC) and am collecting whole-body VLA training data with PICO VR teleoperation",
+            "Prepared the data collection pipeline required for learning-based whole-body control",
+            "Worked directly with real humanoid robot hardware for teleoperation and motion-control experiments",
+            "Investigated whole-body motion generation and coordinated control for humanoid robots",
+            "Demonstrated the trained G1 picking an object and placing it in a container at a 3-day workshop, and guided attendees through teleoperation as used for episode collection"
+          ]
+        },
+        {
+          "role": "Student Assistant (SHK)",
+          "company": "Regelungs- und Automatisierungstechnik (RAT), University of Paderborn",
+          "duration": "Apr 2026 – Sep 2026",
+          "description": "Student assistant supporting the course 'Nonlinear Control of Autonomous and Robotic Systems', focusing on teaching assistance and practical implementation of nonlinear control techniques.",
+          "highlights": [
+            "Built the ROS 2 / Gazebo quadrotor framework and tutorials for the course (PID, feedback linearization, sliding mode control, minimum-snap trajectories); graded student term projects",
+            "Assisted in teaching nonlinear dynamical systems, including system behavior, stability, and dynamics",
+            "Supported students in stability analysis using Lyapunov-based methods",
+            "Guided implementation of nonlinear control techniques such as feedback linearization and sliding mode control",
+            "Helped supervise and support term projects involving practical nonlinear controller design",
+            "Contributed to course materials and tutorials on autonomous and robotic system control"
+          ],
+          "githubUrl": "https://github.com/UPB-RAT/nonlinear_control_course_ss26/tree/pid-controller"
+        },
+        {
+          "role": "Robotics Engineering Intern",
+          "company": "Cellgo GmbH",
+          "duration": "Aug 2022",
+          "description": "Internship focused on embedded communication systems for a carrier robot, implementing standard protocols for reliable sensor data transfer on Arduino-based hardware.",
+          "highlights": [
+            "Implemented I2C and SPI communication protocols",
+            "Designed a master/slave communication system for ESP32 and Arduino Nano devices",
+            "Designed rules for reliable sensor data transfer",
+            "Integrated communication logic on Arduino hardware",
+            "Supported robotics system development and testing"
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "category": "Languages",
+          "icon": "💻",
+          "skills": [
+            "C++",
+            "Python",
+            "Java"
+          ]
+        },
+        {
+          "category": "Event-Based & Neuromorphic Vision",
+          "icon": "👁️",
+          "skills": [
+            "Event Cameras",
+            "Spiking Neural Networks",
+            "snnTorch",
+            "Surrogate Gradients",
+            "Voxel Grids & Time Surfaces",
+            "DEVO",
+            "Event Simulation (vid2e)"
+          ]
+        },
+        {
+          "category": "Humanoid Robotics",
+          "icon": "🤖",
+          "skills": [
+            "Humanoid Robots",
+            "Teleoperation",
+            "Whole-Body Control",
+            "Motion Retargeting",
+            "NVIDIA GR00T",
+            "Unitree G1",
+            "Jetson AGX Thor",
+            "Imitation Learning",
+            "Vision-Language-Action Models",
+            "LeRobot"
+          ]
+        },
+        {
+          "category": "Robotics & SLAM",
+          "icon": "🦾",
+          "skills": [
+            "ROS/ROS2",
+            "Visual SLAM",
+            "Visual Odometry",
+            "Event Cameras",
+            "SNNs",
+            "g2o",
+            "LOAM",
+            "Pose-Graph Optimization",
+            "Loop Closure",
+            "Bundle Adjustment",
+            "SE-Sync",
+            "EKF / VIO",
+            "Trajectory Evaluation (evo)"
+          ]
+        },
+        {
+          "category": "Computer Vision & Perception",
+          "icon": "👁️",
+          "skills": [
+            "OpenCV",
+            "Point Clouds",
+            "LIDAR",
+            "IMU Fusion",
+            "CNNs",
+            "Feature Tracking",
+            "Optical Flow"
+          ]
+        },
+        {
+          "category": "Control & Optimization",
+          "icon": "📊",
+          "skills": [
+            "Nonlinear Control",
+            "PID Control",
+            "Feedback Linearization",
+            "Sliding Mode Control",
+            "Lyapunov Stability",
+            "Pose-Graph Optimization",
+            "Bundle Adjustment",
+            "g2o",
+            "SE-Sync",
+            "Minimum-Snap Trajectories"
+          ]
+        },
+        {
+          "category": "Sensors",
+          "icon": "📡",
+          "skills": [
+            "Event Cameras",
+            "LIDAR",
+            "IMU",
+            "Stereo Cameras",
+            "Depth Sensors"
+          ]
+        },
+        {
+          "category": "Tools & Libraries",
+          "icon": "🛠️",
+          "skills": [
+            "Eigen",
+            "PCL",
+            "PyTorch",
+            "OpenCV",
+            "YAML",
+            "ROS 2",
+            "Pangolin",
+            "Gazebo"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "Neuromorphic Event-Based SLAM: Spiking Patch Selection in DEVO",
+          "role": "Master's Thesis | University of Paderborn | Grade 1.0",
+          "description": "Can a spiking neural network replace the CNN that decides which image patches DEVO tracks? Two temporal encodings (temporal voxel, time surface), 150 evaluation runs on MVSEC, UZH-FPV and held-out TartanAir, a new 1.3 TB training set, and SuperEventSLAM, a SLAM back-end for DEVO.",
+          "metrics": [
+            "~2x lower ATE on MVSEC",
+            "10x smaller spread",
+            "1.3 TB dataset released",
+            "150 evaluation runs"
+          ],
+          "features": [
+            "SNN-based patch selection for event-based visual odometry",
+            "Integration with the DEVO visual odometry pipeline",
+            "Pose-graph optimization for global trajectory correction",
+            "Loop closure detection for long-term drift reduction",
+            "Benchmarking on MVSEC, UZH-FPV and held-out TartanAir (150 evaluation runs)",
+            "Analysis of accuracy under fast motion; latency on neuromorphic hardware identified as future work",
+            "SNN patch selector (LIF neurons, surrogate gradients) inside DEVO; all geometry left unchanged for a like-for-like comparison",
+            "Two encodings: replayed voxel grid (T = 4) and time-surface frames (T = 8)",
+            "Held-out TartanAir: both viable SNN variants beat both CNN baselines on both sequences",
+            "Ablation: a learned score scale hurts; the time-surface encoding is the most robust",
+            "TartanEvents: all TartanAir sequences converted to events (1.3 TB), publicly released",
+            "SuperEventSLAM: SuperEvent features, three-stage loop verification, g2o pose-graph optimization; runs end to end at 36.7 FPS",
+            "Own Python visualisation library on Pangolin for live tracking, mapping and loop closures"
+          ],
+          "technologies": [
+            "Python",
+            "PyTorch",
+            "snnTorch",
+            "Event Cameras",
+            "DEVO",
+            "g2o",
+            "Pangolin",
+            "SNNs",
+            "C++",
+            "ROS"
+          ],
+          "links": [
+            {
+              "label": "TartanEvents dataset",
+              "url": "https://huggingface.co/datasets/upb-rat-ekansh/TartanEventsLeft_wo_upsampling"
+            },
+            {
+              "label": "Visualiser (pangolin-python-viz)",
+              "url": "https://github.com/ekansh-bajpai/pangolin-python-viz"
+            }
+          ],
+          "media": {
+            "type": "video",
+            "url": "/media/supereventslam.mp4",
+            "caption": "SuperEventSLAM running live: event frame (left), map and trajectory (centre), feature matches and loop verification (right). 30 s, sped up.",
+            "poster": "/media/supereventslam.jpg"
+          },
+          "projectType": "Master's Thesis",
+          "featured": true
+        },
+        {
+          "title": "Humanoid Imitation Learning & Whole-Body Control: GR00T on Unitree G1",
+          "role": "Robotics Research / Student Assistant | Stratosfare - Fraunhofer IEM",
+          "description": "End-to-end imitation learning on a real humanoid: teleoperated demonstrations, LeRobot datasets, GR00T N1.7 VLA fine-tuning and deployment on the Unitree G1 via NVIDIA Jetson AGX Thor; now extending to whole-body VLA data collection with GR00T-WholeBodyControl.",
+          "metrics": [
+            "Full workflow: data → fine-tune → deploy",
+            "Live 3-day workshop demo"
+          ],
+          "features": [
+            "Teleoperated pick-and-place demonstrations with Isaac Teleop while a learned whole-body controller (AGILE) keeps the G1 balanced",
+            "Demonstration recording (MCAP) and conversion to LeRobot datasets",
+            "Fine-tuning of the 3B-parameter GR00T N1.7 vision-language-action model on real-robot data",
+            "LEAPP policy export and deployment on the robot via NVIDIA Jetson AGX Thor",
+            "Whole-body VLA data collection with GR00T-WholeBodyControl: GEAR-SONIC controller, PICO VR teleoperation, ego and wrist cameras, LeRobot v2.1",
+            "Workshop: live demo of the trained G1 placing an object in a container; guided attendees through teleoperation",
+            "Real-robot teleoperation on the Unitree G1 (onboard compute: NVIDIA Jetson AGX Thor)",
+            "NVIDIA GR00T environment and framework integration",
+            "Whole-body control pipeline setup",
+            "Robot configuration and system integration",
+            "Data collection pipeline preparation",
+            "Evaluation and experimentation on real humanoid hardware",
+            "Live workshop demo: trained G1 picks an object and places it in a container"
+          ],
+          "technologies": [
+            "Python",
+            "C++",
+            "NVIDIA GR00T N1.7",
+            "LeRobot",
+            "Isaac ROS",
+            "GEAR-SONIC",
+            "Unitree G1",
+            "Jetson AGX Thor",
+            "NVIDIA GR00T",
+            "Whole-Body Control",
+            "Teleoperation",
+            "Humanoid Robotics",
+            "GR00T N1.7"
+          ],
+          "links": [
+            {
+              "label": "NVIDIA GR00T workflow",
+              "url": "https://docs.nvidia.com/learning/physical-ai/gr00t-e2e-workflow/latest/index.html"
+            },
+            {
+              "label": "GR00T-WholeBodyControl",
+              "url": "https://nvlabs.github.io/GR00T-WholeBodyControl/index.html"
+            }
+          ],
+          "projectType": "Fraunhofer IEM"
+        },
+        {
+          "title": "Master's Project | Autonomous Mapping & SLAM Optimization",
+          "role": "Master's Project | University of Paderborn",
+          "description": "Enhanced a LOAM-based SLAM pipeline with IMU pose estimation and a modular C++ architecture for evaluating multiple graph optimization backends.",
+          "features": [
+            "Modular ROS packages with single-responsibility design",
+            "Templated C++ architecture for optimizer backends",
+            "Integration and benchmarking of g2o and SE-Sync",
+            "ROS nodes for graph optimization experiments",
+            "YAML-based parameter and configuration management"
+          ],
+          "technologies": [
+            "C++",
+            "ROS",
+            "LOAM",
+            "g2o",
+            "SE-Sync",
+            "IMU",
+            "LIDAR"
+          ],
+          "projectType": "Master's Project"
+        },
+        {
+          "title": "Quadrotor Nonlinear Control Course Framework",
+          "role": "Student Assistant (SHK) | RAT, University of Paderborn",
+          "description": "ROS 2 / Gazebo quadrotor simulation and controller framework for the course \"Nonlinear Control of Autonomous and Robotic Systems\": students implement and compare nonlinear controllers on the same drone and trajectories.",
+          "features": [
+            "ROS 2 (Jazzy) + Gazebo quadrotor simulation with pose-listener and motor-command nodes",
+            "PID position control with figure-8, circle, spiral and square trajectories, switchable at runtime",
+            "Feedback linearization and sliding mode control (single-axis, MIMO and two-loop variants)",
+            "Minimum-snap trajectory generation; RViz2 visualisation",
+            "Wrote the tutorials and code; graded student term projects"
+          ],
+          "technologies": [
+            "Python",
+            "ROS 2",
+            "Gazebo",
+            "Nonlinear Control",
+            "Sliding Mode Control",
+            "Feedback Linearization",
+            "Minimum-Snap",
+            "RViz2"
+          ],
+          "githubUrl": "https://github.com/UPB-RAT/nonlinear_control_course_ss26/tree/pid-controller",
+          "projectType": "Teaching"
+        },
+        {
+          "title": "Cellgo",
+          "role": "Robotics Engineering Intern",
+          "description": "Developed low-level communication logic for a carrier robot by implementing standard embedded communication protocols for reliable sensor data transfer on an Arduino-based platform.",
+          "features": [
+            "Implemented I2C and SPI communication protocols",
+            "Designed a master/slave system for ESP32 and Arduino Nano devices",
+            "Designed rules for reliable sensor data transfer",
+            "Integrated communication logic on Arduino hardware",
+            "Supported robotics system development and testing"
+          ],
+          "technologies": [
+            "C++",
+            "Arduino",
+            "I2C",
+            "SPI",
+            "Embedded Systems",
+            "Robotics"
+          ],
+          "projectUrl": "https://cellgo.io/en/",
+          "projectType": "Internship"
+        },
+        {
+          "title": "Custom OLED Ping Pong Game with Facial Avatars",
+          "role": "Personal Project",
+          "description": "Designed and built an interactive OLED-based ping pong game on a custom PCB with personalized player avatars, integrating embedded graphics, image processing, and microcontroller-based gameplay logic.",
+          "features": [
+            "Custom ping pong gameplay on 128x64 OLED display",
+            "Face-to-bitmap conversion and rendering on microcontroller displays",
+            "Custom PCB design integrating NodeMCU, buttons, and OLED module",
+            "Two-button player control and simple AI opponent logic",
+            "Real-time game physics, scoring, and difficulty scaling",
+            "Embedded graphical rendering using display libraries"
+          ],
+          "technologies": [
+            "Arduino",
+            "C++",
+            "NodeMCU ESP8266",
+            "U8g2 Graphics Library",
+            "OLED Displays",
+            "PCB Design",
+            "Embedded Systems"
+          ],
+          "projectUrl": "https://www.hackster.io/ekanshbajpai712/making-a-custom-ping-pong-game-with-people-s-face-in-it-1d9608",
+          "projectType": "Personal"
+        },
+        {
+          "title": "Bachelor's Thesis | Self Balancing Object Tracking Robot",
+          "role": "Bachelor's Thesis Student | Madan Mohan Malaviya University of Technology",
+          "description": "Designed and implemented a two-wheeled self-balancing robot combining PID-based inverted pendulum control, IMU sensor fusion, and Raspberry Pi computer vision for autonomous object tracking.",
+          "features": [
+            "PID-controlled self-balancing using IMU sensor fusion",
+            "Real-time tilt estimation and motor feedback control",
+            "Vision-based object detection and centroid tracking with OpenCV",
+            "Autonomous motion control based on visual feedback",
+            "Camera-based color segmentation and contour analysis",
+            "End-to-end integration of control, sensing, and vision modules"
+          ],
+          "technologies": [
+            "Arduino",
+            "C++",
+            "Python",
+            "Raspberry Pi",
+            "OpenCV",
+            "MPU6050 IMU",
+            "PID Control",
+            "L298N Motor Driver",
+            "Embedded Robotics",
+            "Computer Vision"
+          ],
+          "projectUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-1-3ddaef",
+          "githubUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-2-4d2c2a",
+          "projectType": "Bachelor's Thesis"
+        }
+      ]
+    },
     {
       "id": "aiml",
       "name": "AI/ML/RAG Development",
-
       "experience": [
         {
           "role": "Student Assistant",
@@ -80,7 +528,6 @@
           ]
         }
       ],
-
       "skills": [
         {
           "category": "Languages",
@@ -155,7 +602,6 @@
           ]
         }
       ],
-
       "projects": [
         {
           "title": "Normex – Regulatory Compliance Platform",
@@ -271,313 +717,9 @@
         }
       ]
     },
-
-    {
-      "id": "robotics",
-      "name": "Robotics Development",
-
-      "experience": [
-        {
-          "role": "Student Assistant (SHK) – Humanoid Robotics",
-          "company": "Stratosfare - Fraunhofer IEM",
-          "duration": "Sep 2026 – Present",
-          "description": "Working on humanoid robotics, teleoperation, and whole-body control using real humanoid platforms, with hands-on integration of NVIDIA GR00T and robot hardware.",
-          "highlights": [
-            "Completed the GR00T teleoperation workflow on real humanoid platforms, including Unitree G1 and THOR",
-            "Set up and integrated NVIDIA GR00T WholeBodyControl for humanoid robot control",
-            "Configured the software, robot interfaces, and runtime environment required for whole-body control experiments",
-            "Implemented and validated the WholeBodyControl pipeline up to the data collection stage",
-            "Prepared the data collection pipeline required for learning-based whole-body control",
-            "Worked directly with real humanoid robot hardware for teleoperation and motion-control experiments",
-            "Investigated whole-body motion generation and coordinated control for humanoid robots"
-          ]
-        },
-        {
-          "role": "Student Assistant (SHK)",
-          "company": "Regelungs- und Automatisierungstechnik (RAT), University of Paderborn",
-          "duration": "Apr 2026 – Present",
-          "description": "Student assistant supporting the course 'Nonlinear Control of Autonomous and Robotic Systems', focusing on teaching assistance and practical implementation of nonlinear control techniques.",
-          "highlights": [
-            "Assisted in teaching nonlinear dynamical systems, including system behavior, stability, and dynamics",
-            "Supported students in stability analysis using Lyapunov-based methods",
-            "Guided implementation of nonlinear control techniques such as feedback linearization and sliding mode control",
-            "Helped supervise and support term projects involving practical nonlinear controller design",
-            "Contributed to course materials and tutorials on autonomous and robotic system control"
-          ]
-        },
-        {
-          "role": "Robotics Engineering Intern",
-          "company": "Cellgo GmbH",
-          "duration": "Aug 2022",
-          "description": "Internship focused on embedded communication systems for a carrier robot, implementing standard protocols for reliable sensor data transfer on Arduino-based hardware.",
-          "highlights": [
-            "Implemented I2C and SPI communication protocols",
-            "Designed a master/slave communication system for ESP32 and Arduino Nano devices",
-            "Designed rules for reliable sensor data transfer",
-            "Integrated communication logic on Arduino hardware",
-            "Supported robotics system development and testing"
-          ]
-        }
-      ],
-
-      "skills": [
-        {
-          "category": "Languages",
-          "icon": "💻",
-          "skills": [
-            "C++",
-            "Python",
-            "Java"
-          ]
-        },
-        {
-          "category": "Humanoid Robotics",
-          "icon": "🤖",
-          "skills": [
-            "Humanoid Robots",
-            "Teleoperation",
-            "Whole-Body Control",
-            "Motion Retargeting",
-            "NVIDIA GR00T",
-            "Unitree G1",
-            "THOR"
-          ]
-        },
-        {
-          "category": "Robotics & SLAM",
-          "icon": "🦾",
-          "skills": [
-            "ROS/ROS2",
-            "Visual SLAM",
-            "Visual Odometry",
-            "Event Cameras",
-            "SNNs",
-            "g2o",
-            "LOAM"
-          ]
-        },
-        {
-          "category": "Computer Vision & Perception",
-          "icon": "👁️",
-          "skills": [
-            "OpenCV",
-            "Point Clouds",
-            "LIDAR",
-            "IMU Fusion",
-            "CNNs",
-            "Feature Tracking",
-            "Optical Flow"
-          ]
-        },
-        {
-          "category": "Control & Optimization",
-          "icon": "📊",
-          "skills": [
-            "Nonlinear Control",
-            "PID Control",
-            "Feedback Linearization",
-            "Sliding Mode Control",
-            "Lyapunov Stability",
-            "Pose-Graph Optimization",
-            "Bundle Adjustment",
-            "g2o",
-            "SE-Sync"
-          ]
-        },
-        {
-          "category": "Sensors",
-          "icon": "📡",
-          "skills": [
-            "Event Cameras",
-            "LIDAR",
-            "IMU",
-            "Stereo Cameras",
-            "Depth Sensors"
-          ]
-        },
-        {
-          "category": "Tools & Libraries",
-          "icon": "🛠️",
-          "skills": [
-            "Eigen",
-            "PCL",
-            "PyTorch",
-            "OpenCV",
-            "YAML"
-          ]
-        }
-      ],
-
-      "projects": [
-        {
-          "title": "Humanoid Teleoperation & Whole-Body Control",
-          "role": "Robotics Research / Student Assistant | Stratosfare - Fraunhofer IEM",
-          "description": "Hands-on development and integration of teleoperation and whole-body control pipelines on real humanoid robots, including Unitree G1 and THOR.",
-          "features": [
-            "Real-robot teleoperation on Unitree G1 and THOR",
-            "NVIDIA GR00T environment and framework integration",
-            "Whole-body control pipeline setup",
-            "Robot configuration and system integration",
-            "Data collection pipeline preparation",
-            "Evaluation and experimentation on real humanoid hardware"
-          ],
-          "technologies": [
-            "Python",
-            "C++",
-            "NVIDIA GR00T",
-            "Whole-Body Control",
-            "Teleoperation",
-            "Humanoid Robotics",
-            "Unitree G1",
-            "THOR"
-          ],
-          "projectType": "Fraunhofer IEM"
-        },
-        {
-          "title": "Neuromorphic Event-Based SLAM (In Progress)",
-          "role": "Master's Thesis Student | University of Paderborn",
-          "description": "Researching an event-based SLAM pipeline using spiking neural networks for asynchronous visual processing, with pose-graph optimization and loop closure for long-term trajectory estimation.",
-          "features": [
-            "SNN-based patch selection for event-based visual odometry",
-            "Integration with the DEVO visual odometry pipeline",
-            "Pose-graph optimization for global trajectory correction",
-            "Loop closure detection for long-term drift reduction",
-            "Benchmarking on MVSEC and EVIMO2 datasets",
-            "Analysis of accuracy and latency under high-speed and HDR conditions"
-          ],
-          "technologies": [
-            "C++",
-            "Python",
-            "ROS",
-            "SNNs",
-            "Event Cameras",
-            "DEVO",
-            "PyTorch"
-          ],
-          "projectType": "Master's Thesis"
-        },
-        {
-          "title": "Master's Project | Autonomous Mapping & SLAM Optimization",
-          "role": "Master's Project | University of Paderborn",
-          "description": "Enhanced a LOAM-based SLAM pipeline with IMU pose estimation and a modular C++ architecture for evaluating multiple graph optimization backends.",
-          "features": [
-            "Modular ROS packages with single-responsibility design",
-            "Templated C++ architecture for optimizer backends",
-            "Integration and benchmarking of g2o and SE-Sync",
-            "ROS nodes for graph optimization experiments",
-            "YAML-based parameter and configuration management"
-          ],
-          "technologies": [
-            "C++",
-            "ROS",
-            "LOAM",
-            "g2o",
-            "SE-Sync",
-            "IMU",
-            "LIDAR"
-          ],
-          "projectType": "Master's Project"
-        },
-        {
-          "title": "Visual-Inertial Odometry System",
-          "role": "Personal Project",
-          "description": "Developed a Visual-Inertial Odometry system combining camera and IMU measurements for real-time pose estimation.",
-          "features": [
-            "Feature extraction and optical flow tracking",
-            "IMU calibration and preintegration",
-            "Real-time pose estimation pipeline",
-            "Evaluation on EuRoC and TUM datasets"
-          ],
-          "technologies": [
-            "C++",
-            "OpenCV",
-            "Eigen",
-            "ROS",
-            "EKF",
-            "IMU"
-          ]
-        },
-        {
-          "title": "Cellgo",
-          "role": "Robotics Engineering Intern",
-          "description": "Developed low-level communication logic for a carrier robot by implementing standard embedded communication protocols for reliable sensor data transfer on an Arduino-based platform.",
-          "features": [
-            "Implemented I2C and SPI communication protocols",
-            "Designed a master/slave system for ESP32 and Arduino Nano devices",
-            "Designed rules for reliable sensor data transfer",
-            "Integrated communication logic on Arduino hardware",
-            "Supported robotics system development and testing"
-          ],
-          "technologies": [
-            "C++",
-            "Arduino",
-            "I2C",
-            "SPI",
-            "Embedded Systems",
-            "Robotics"
-          ],
-          "projectUrl": "https://cellgo.io/en/",
-          "projectType": "Internship"
-        },
-        {
-          "title": "Custom OLED Ping Pong Game with Facial Avatars",
-          "role": "Personal Project",
-          "description": "Designed and built an interactive OLED-based ping pong game on a custom PCB with personalized player avatars, integrating embedded graphics, image processing, and microcontroller-based gameplay logic.",
-          "features": [
-            "Custom ping pong gameplay on 128x64 OLED display",
-            "Face-to-bitmap conversion and rendering on microcontroller displays",
-            "Custom PCB design integrating NodeMCU, buttons, and OLED module",
-            "Two-button player control and simple AI opponent logic",
-            "Real-time game physics, scoring, and difficulty scaling",
-            "Embedded graphical rendering using display libraries"
-          ],
-          "technologies": [
-            "Arduino",
-            "C++",
-            "NodeMCU ESP8266",
-            "U8g2 Graphics Library",
-            "OLED Displays",
-            "PCB Design",
-            "Embedded Systems"
-          ],
-          "projectUrl": "https://www.hackster.io/ekanshbajpai712/making-a-custom-ping-pong-game-with-people-s-face-in-it-1d9608",
-          "projectType": "Personal"
-        },
-        {
-          "title": "Bachelor's Thesis | Self Balancing Object Tracking Robot",
-          "role": "Bachelor's Thesis Student | Madan Mohan Malaviya University of Technology",
-          "description": "Designed and implemented a two-wheeled self-balancing robot combining PID-based inverted pendulum control, IMU sensor fusion, and Raspberry Pi computer vision for autonomous object tracking.",
-          "features": [
-            "PID-controlled self-balancing using IMU sensor fusion",
-            "Real-time tilt estimation and motor feedback control",
-            "Vision-based object detection and centroid tracking with OpenCV",
-            "Autonomous motion control based on visual feedback",
-            "Camera-based color segmentation and contour analysis",
-            "End-to-end integration of control, sensing, and vision modules"
-          ],
-          "technologies": [
-            "Arduino",
-            "C++",
-            "Python",
-            "Raspberry Pi",
-            "OpenCV",
-            "MPU6050 IMU",
-            "PID Control",
-            "L298N Motor Driver",
-            "Embedded Robotics",
-            "Computer Vision"
-          ],
-          "projectUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-1-3ddaef",
-          "githubUrl": "https://www.hackster.io/ekanshbajpai712/self-balancing-object-tracking-robot-part-2-4d2c2a",
-          "projectType": "Bachelor's Thesis"
-        }
-      ]
-    },
-
     {
       "id": "fullstack",
       "name": "Fullstack Web Development",
-
       "experience": [
         {
           "role": "Associate Software Developer",
@@ -603,7 +745,6 @@
           "projectUrl": "https://hummingwave.com/"
         }
       ],
-
       "skills": [
         {
           "category": "Programming Languages",
@@ -683,7 +824,6 @@
           ]
         }
       ],
-
       "projects": [
         {
           "title": "MoneyWorld Asia – Money Remit System",
@@ -796,5 +936,6 @@
         }
       ]
     }
-  ]
+  ],
+  "defaultTab": "robotics"
 }

@@ -1,7 +1,13 @@
 import React from 'react';
 import { TabData, Project, Experience } from '../types';
 import Skills from './Skills';
-import { FolderIcon, ExternalLinkIcon, StarIcon, GitBranchIcon } from 'lucide-react';
+import { FolderIcon, ExternalLinkIcon, SparklesIcon } from 'lucide-react';
+import { LinkButtons, MediaView } from './LinkButtons';
+import { TechDots, Metrics } from './ui';
+
+const SectionTitle: React.FC<{ id: string; children: React.ReactNode }> = ({ id, children }) => (
+  <h3 id={id} className="text-lg font-semibold scroll-mt-28">{children}</h3>
+);
 
 interface ExperienceTabsProps {
   tabs: TabData[];
@@ -14,23 +20,27 @@ interface ExperienceTabsProps {
 
 const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setActiveTab, styles, onProjectClick, onExperienceClick }) => {
   const currentTab = tabs.find(t => t.id === activeTab) || tabs[0];
+  const featured = currentTab.projects.filter(p => p.featured);
+  const others = currentTab.projects.filter(p => !p.featured);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Tab Nav */}
-      <div className="flex items-center border-b border-gray-200 dark:border-gray-800 overflow-x-auto no-scrollbar">
+      <div role="tablist" className="flex items-center border-b border-line overflow-x-auto no-scrollbar">
         {tabs.map((tab) => (
           <button
             key={tab.id}
+            role="tab"
+            aria-selected={activeTab === tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={`pb-3 px-4 flex items-center gap-2 transition-all duration-300 text-sm whitespace-nowrap border-b-2 ${
               activeTab === tab.id
-                ? `${styles.btnActive} border-[#f78166]`
-                : 'border-transparent text-gray-500 hover:text-current hover:border-gray-300 dark:hover:border-gray-600'
+                ? `${styles.btnActive} border-tab`
+                : 'border-transparent text-muted hover:text-ink hover:border-line'
             }`}
           >
             <FolderIcon className="w-4 h-4 opacity-60" />
-            {tab.name.split('&')[0].trim()}
+            {tab.name}
             <span className={`ml-1 px-1.5 py-0.5 text-[11px] font-medium rounded-full ${styles.btn}`}>
               {tab.projects.length}
             </span>
@@ -38,21 +48,53 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
         ))}
       </div>
 
-      <div className="w-full space-y-12">
-        {/* Projects (Repositories Style) */}
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-base font-normal">Projects</h3>
-            {/* <span className="text-xs opacity-60 hover:text-blue-500 cursor-pointer">Customize your pins</span> */}
+      {/* Featured project(s): wide spotlight with media */}
+      {featured.map((proj, idx) => (
+        <article
+          key={`f${idx}`}
+          onClick={() => onProjectClick?.(proj)}
+          className={`relative rounded-xl border overflow-hidden cursor-pointer group transition-all duration-200 ${styles.card}`}
+        >
+          <div className={`grid grid-cols-1 ${proj.media ? 'lg:grid-cols-[1.1fr,1fr]' : ''}`}>
+            {proj.media && (
+              <div className="bg-black flex items-center">
+                <MediaView media={proj.media} className="w-full h-full max-h-80 object-contain" />
+              </div>
+            )}
+            <div className="p-5 sm:p-6 flex flex-col gap-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className={`flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider ${styles.accent}`}>
+                  <SparklesIcon className="w-3.5 h-3.5" /> Featured
+                </span>
+                {proj.projectType && (
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${styles.btn}`}>{proj.projectType}</span>
+                )}
+              </div>
+              <h4 className={`text-xl font-bold leading-snug group-hover:underline ${styles.accent}`}>{proj.title}</h4>
+              <p className={`text-xs font-semibold ${styles.secondaryText}`}>{proj.role}</p>
+              <p className="text-sm leading-relaxed">{proj.description}</p>
+              <Metrics metrics={proj.metrics} styles={styles} large />
+              {proj.links && proj.links.length > 0 && <LinkButtons links={proj.links} styles={styles} small />}
+              <div className="mt-auto pt-1 flex items-center justify-between gap-2">
+                <TechDots tech={proj.technologies} max={5} />
+                <span className={`text-xs font-semibold whitespace-nowrap ${styles.accent}`}>Details →</span>
+              </div>
+            </div>
           </div>
+        </article>
+      ))}
+
+      {/* Projects */}
+      {others.length > 0 && (
+        <div className="space-y-4">
+          <SectionTitle id="projects">Projects</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {currentTab.projects.map((proj, idx) => (
+            {others.map((proj, idx) => (
               <div
                 key={idx}
                 onClick={() => onProjectClick?.(proj)}
-                className={`relative p-4 rounded-md border transition-all duration-200 flex flex-col gap-2 cursor-pointer group ${styles.card}`}
+                className={`relative p-4 rounded-lg border transition-all duration-200 flex flex-col gap-2 cursor-pointer group ${styles.card}`}
               >
-                {/* Corner Detail Icon */}
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ExternalLinkIcon className={`w-4 h-4 ${styles.accent}`} />
                 </div>
@@ -60,79 +102,65 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ tabs, activeTab, setAct
                 <div className="flex justify-between items-start gap-2 pr-4">
                   <div className="flex items-center gap-2 overflow-hidden">
                     <FolderIcon className="w-4 h-4 opacity-60 flex-shrink-0" />
-                    <h4 className={`text-sm font-semibold group-hover:underline truncate ${styles.accent}`}>
-                      {proj.title}
-                    </h4>
+                    <h4 className={`text-sm font-semibold group-hover:underline truncate ${styles.accent}`}>{proj.title}</h4>
                   </div>
-                  {
-                    proj.projectType ? <span className={`text-[10px] px-2 py-0.5 rounded-full border flex-shrink-0 font-medium ${styles.btn}`}>{proj.projectType}</span> : ""
-                  }
+                  {proj.projectType && (
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full border flex-shrink-0 font-medium ${styles.btn}`}>{proj.projectType}</span>
+                  )}
                 </div>
 
-                <p className={`text-xs ${styles.secondaryText} leading-relaxed flex-grow line-clamp-3 mb-1`}>
-                  {proj.description}
-                </p>
+                {proj.media && (
+                  <div className="rounded overflow-hidden border border-line bg-black/5">
+                    <MediaView media={proj.media} className="w-full h-40 object-cover" />
+                  </div>
+                )}
 
-                <div className="flex items-center gap-4 mt-auto text-[11px] opacity-80">
-                  {proj.technologies.slice(0, 4).map((tech, i) => (
-                    <span key={i} className="flex items-center gap-1">
-                      <span className={`w-3 h-3 rounded-full ${tech.toLowerCase().includes('react') ? 'bg-[#3178c6]' : tech.toLowerCase().includes('python') ? 'bg-[#3572A5]' : 'bg-[#f1e05a]'}`}></span>
-                      <span>{tech}</span>
-                    </span>
-                  ))}
+                <p className={`text-xs ${styles.secondaryText} leading-relaxed line-clamp-3 mb-1`}>{proj.description}</p>
 
-                  {/* <span className="flex items-center gap-1">
-                    <StarIcon className="w-3 h-3" /> 12
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <GitBranchIcon className="w-3 h-3" /> 4
-                  </span> */}
+                <Metrics metrics={proj.metrics} styles={styles} />
+                {proj.links && proj.links.length > 0 && <LinkButtons links={proj.links} styles={styles} small />}
+
+                <div className="mt-auto">
+                  <TechDots tech={proj.technologies} />
                 </div>
               </div>
             ))}
           </div>
         </div>
+      )}
 
-        {/* Skills Section */}
+      {/* Experience (timeline) */}
+      <div className="space-y-4">
+        <SectionTitle id="experience">Experience</SectionTitle>
+        <div className="space-y-0">
+          {currentTab.experience.map((exp, idx) => (
+            <div
+              key={idx}
+              onClick={() => onExperienceClick?.(exp)}
+              className="relative pl-8 pb-8 border-l border-line group cursor-pointer last:pb-0"
+            >
+              <div className="absolute right-0 top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ExternalLinkIcon className={`w-4 h-4 ${styles.accent}`} />
+              </div>
+
+              <div className={`absolute top-0 left-[-5px] w-2.5 h-2.5 rounded-full border border-current transition-colors ${styles.accent} bg-bg group-hover:bg-accent`}></div>
+
+              <div className="flex flex-col gap-1 -mt-1 pr-6">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h4 className="text-sm font-semibold group-hover:text-accent transition-colors">{exp.role}</h4>
+                  <span className={`text-[10px] font-normal px-2 py-0.5 rounded-full border ${styles.btn}`}>{exp.duration}</span>
+                </div>
+                <p className={`text-xs font-semibold ${styles.accent}`}>{exp.company}</p>
+                <p className={`text-xs leading-relaxed ${styles.secondaryText} line-clamp-2 mt-1`}>{exp.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Skills */}
+      <div id="skills" className="scroll-mt-28">
         <Skills skills={currentTab.skills} styles={styles} />
-
-        {/* Experience Activity (Timeline) */}
-        <div className="space-y-4">
-          <h3 className="text-base font-normal">Career activity</h3>
-          <div className="space-y-0">
-            {currentTab.experience.map((exp, idx) => (
-              <div
-                key={idx}
-                onClick={() => onExperienceClick?.(exp)}
-                className="relative pl-8 pb-8 border-l border-gray-200 dark:border-gray-800 group cursor-pointer last:pb-0"
-              >
-                {/* Corner Detail Icon */}
-                <div className="absolute right-0 top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ExternalLinkIcon className={`w-4 h-4 ${styles.accent}`} />
-                </div>
-
-                <div className={`absolute top-0 left-[-5px] w-2.5 h-2.5 rounded-full border border-current transition-colors ${styles.accent} bg-white dark:bg-[#0d1117] group-hover:bg-blue-500`}></div>
-
-                <div className="flex flex-col gap-1 -mt-1 pr-6">
-                  <div className="flex items-center gap-2">
-                    <h4 className="text-sm font-semibold group-hover:text-blue-500 transition-colors">
-                      {exp.role}
-                    </h4>
-                    <span className={`text-[10px] font-normal px-2 py-0.5 rounded-full border ${styles.btn}`}>
-                      {exp.duration}
-                    </span>
-                  </div>
-                  <p className={`text-xs font-semibold ${styles.accent}`}>
-                    {exp.company}
-                  </p>
-                  <p className={`text-xs leading-relaxed ${styles.secondaryText} line-clamp-2 mt-1`}>
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

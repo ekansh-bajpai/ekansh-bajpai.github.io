@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Project, Education, Experience } from '../types';
+import { Project, Education, Experience, LinkItem, Media } from '../types';
+import { LinkButtons, MediaView } from './LinkButtons';
 
 import {
   XIcon,
@@ -95,6 +96,10 @@ const DetailModal: React.FC<DetailModalProps> = ({
   let technologies: string[] = [];
   let projectUrl = '';
   let githubUrl = '';
+  let links: LinkItem[] = [];
+  let media: Media | undefined;
+  let metrics: string[] = [];
+  let facts: { label: string; value: string }[] = [];
 
   if (type === 'project') {
     const p = data as Project;
@@ -106,6 +111,9 @@ const DetailModal: React.FC<DetailModalProps> = ({
     technologies = p.technologies;
     projectUrl = p.projectUrl || '';
     githubUrl = p.githubUrl || '';
+    links = p.links || [];
+    media = p.media;
+    metrics = p.metrics || [];
   } else if (type === 'experience') {
     const e = data as Experience;
     title = e.role;
@@ -116,6 +124,8 @@ const DetailModal: React.FC<DetailModalProps> = ({
     listLabel = 'Key Highlights';
     projectUrl = e.projectUrl || '';
     githubUrl = e.githubUrl || '';
+    links = e.links || [];
+    media = e.media;
   } else if (type === 'education') {
     const ed = data as Education;
     title = ed.degree;
@@ -124,6 +134,9 @@ const DetailModal: React.FC<DetailModalProps> = ({
     description = `Focus: ${ed.focus}`;
     projectUrl = ed.projectUrl || '';
     githubUrl = ed.githubUrl || '';
+    links = ed.links || [];
+    if (ed.thesis) facts.push({ label: 'Thesis', value: ed.thesis });
+    if (ed.grade) facts.push({ label: 'Grade', value: ed.grade });
   }
 
   return (
@@ -161,7 +174,7 @@ const DetailModal: React.FC<DetailModalProps> = ({
           {/* ✅ Close Icon */}
           <button
             onClick={onClose}
-            className={`p-1.5 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${styles.secondaryText}`}
+            className={`p-1.5 rounded-md hover:bg-line/60 transition-colors ${styles.secondaryText}`}
           >
             <XIcon className="w-5 h-5" />
           </button>
@@ -169,6 +182,15 @@ const DetailModal: React.FC<DetailModalProps> = ({
 
         {/* Content */}
         <div className="flex-grow overflow-y-auto p-6 space-y-8">
+          {media && (
+            <figure className="space-y-2">
+              <MediaView media={media} controls className="w-full max-h-96 object-contain rounded-md border border-line bg-black" />
+              {media.caption && (
+                <figcaption className={`text-xs ${styles.secondaryText}`}>{media.caption}</figcaption>
+              )}
+            </figure>
+          )}
+
           <section className="space-y-3">
             <h3 className="text-sm font-bold">Overview</h3>
 
@@ -177,11 +199,37 @@ const DetailModal: React.FC<DetailModalProps> = ({
             >
               {description}
             </p>
+
+            {facts.length > 0 && (
+              <dl className="grid grid-cols-[auto,1fr] gap-x-4 gap-y-1 text-sm">
+                {facts.map((f, i) => (
+                  <React.Fragment key={i}>
+                    <dt className="font-semibold">{f.label}</dt>
+                    <dd className={styles.secondaryText}>{f.value}</dd>
+                  </React.Fragment>
+                ))}
+              </dl>
+            )}
           </section>
 
-          {(projectUrl || githubUrl) && (
+          {metrics.length > 0 && (
+            <section className="space-y-3">
+              <h3 className="text-sm font-bold">Results</h3>
+              <div className="flex flex-wrap gap-2">
+                {metrics.map((m, i) => (
+                  <span key={i} className={`text-xs px-3 py-1 rounded-full border font-semibold text-hl border-hl/30 bg-hl/5`}>
+                    {m}
+                  </span>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {(projectUrl || githubUrl || links.length > 0) && (
             <section className="space-y-3">
               <h3 className="text-sm font-bold">Links</h3>
+
+              {links.length > 0 && <LinkButtons links={links} styles={styles} />}
 
               <div className="flex flex-wrap gap-3">
                 {projectUrl && (
@@ -217,14 +265,10 @@ const DetailModal: React.FC<DetailModalProps> = ({
                 {listItems.map((item, i) => (
                   <li
                     key={i}
-                    className={`text-xs p-3 rounded-md border flex gap-3 ${
-                      isDark
-                        ? 'bg-white/5 border-white/10'
-                        : 'bg-gray-50 border-gray-100'
-                    }`}
+                    className={`text-xs p-3 rounded-md border flex gap-3 bg-surface border-line`}
                   >
                     {/* ✅ Check icon */}
-                    <CheckIcon className="w-4 h-4 text-green-500" />
+                    <CheckIcon className="w-4 h-4 text-accent flex-shrink-0" />
 
                     <span className={styles.secondaryText}>
                       {item}

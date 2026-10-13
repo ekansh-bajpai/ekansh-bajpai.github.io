@@ -1,66 +1,101 @@
+import React, { useEffect, useState } from 'react';
+import { XIcon, DownloadIcon } from 'lucide-react';
 
-import React from 'react';
+// Display names for the CV keys in data.json → personalInfo.resumeUrl (unknown keys show as-is)
+const CV_LABELS: Record<string, { title: string; hint: string }> = {
+  research: { title: 'Research CV', hint: 'For PhD and research positions' },
+  robotics: { title: 'Robotics Engineer', hint: 'SLAM, perception, control' },
+  aiml: { title: 'AI / ML Engineer', hint: 'LLMs, RAG, AI systems' },
+  fullstack: { title: 'Full-Stack Developer', hint: 'Web, cloud, back-end' },
+};
 
 interface DownloadCVModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onConfirm: () => void;
-  tabName: string;
+  onConfirm: (key: string) => void;
+  resumes: Record<string, string>;
+  defaultKey: string;
   styles: any;
   isDark: boolean;
 }
 
-const DownloadCVModal: React.FC<DownloadCVModalProps> = ({ isOpen, onClose, onConfirm, tabName, styles, isDark }) => {
+const DownloadCVModal: React.FC<DownloadCVModalProps> = ({ isOpen, onClose, onConfirm, resumes, defaultKey, styles, isDark }) => {
+  const keys = Object.keys(resumes);
+  const [choice, setChoice] = useState(defaultKey);
+
+  // Preselect the CV that matches the open tab each time the dialog opens
+  useEffect(() => {
+    if (isOpen) setChoice(keys.includes(defaultKey) ? defaultKey : keys[0]);
+  }, [isOpen, defaultKey]);
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 backdrop-blur-sm bg-black/40 transition-opacity">
-      <div 
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cv-dialog-title"
         className={`relative w-full max-w-md overflow-hidden rounded-xl border shadow-2xl flex flex-col ${styles.modalCard}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={`p-4 border-b flex justify-between items-center ${styles.modalHeader}`}>
-          <h3 className="text-sm font-bold">Download Resume</h3>
-          <button 
+          <h3 id="cv-dialog-title" className="text-sm font-bold">Download CV</h3>
+          <button
             onClick={onClose}
-            className={`p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${styles.secondaryText}`}
+            aria-label="Close"
+            className={`p-1 rounded-md hover:bg-line/60 transition-colors ${styles.secondaryText}`}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <XIcon className="w-4 h-4" />
           </button>
         </div>
-        
-        <div className="p-6 space-y-4">
-          <div className="flex items-start gap-4">
-            <div className={`p-3 rounded-full ${isDark ? 'bg-blue-500/10' : 'bg-blue-50'}`}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.accent}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </div>
-            <div className="space-y-1">
-              <p className="text-sm font-semibold">Select CV Version</p>
-              <p className={`text-xs ${styles.secondaryText}`}>
-                You are about to download the <span className="font-bold text-current">{tabName}</span> specialized version of the resume.
-              </p>
-            </div>
-          </div>
 
-          <div className={`p-3 rounded-md text-[11px] font-mono border ${isDark ? 'bg-[#0d1117] border-[#30363d]' : 'bg-[#f6f8fa] border-[#d0d7de]'}`}>
-            File: Ekansh_Bajpai_Resume.pdf
-          </div>
-        </div>
+        <fieldset className="p-4 space-y-2">
+          <legend className={`text-xs mb-2 ${styles.secondaryText}`}>Choose a version:</legend>
+          {keys.map((k) => {
+            const label = CV_LABELS[k] || { title: k, hint: '' };
+            const selected = choice === k;
+            return (
+              <label
+                key={k}
+                className={`flex items-center gap-3 p-3 rounded-md border cursor-pointer transition-colors ${
+                  selected
+                    ? 'border-accent bg-accent/5'
+                    : 'border-line hover:border-muted/60'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="cv"
+                  value={k}
+                  checked={selected}
+                  onChange={() => setChoice(k)}
+                  className="accent-accent"
+                />
+                <span className="flex flex-col">
+                  <span className="text-sm font-semibold">{label.title}</span>
+                  {label.hint && <span className={`text-xs ${styles.secondaryText}`}>{label.hint}</span>}
+                </span>
+              </label>
+            );
+          })}
+        </fieldset>
 
         <div className={`p-4 border-t flex justify-end gap-3 ${styles.footer}`}>
-          <button 
+          <button
             onClick={onClose}
             className={`px-4 py-1.5 rounded-md text-xs font-semibold border transition-colors ${styles.btn}`}
           >
             Cancel
           </button>
-          <button 
+          <button
             onClick={() => {
-              onConfirm();
+              onConfirm(choice);
               onClose();
             }}
-            className={`px-4 py-1.5 rounded-md text-xs font-semibold text-white transition-colors ${styles.accentBg}`}
+            className={`flex items-center gap-1.5 px-4 py-1.5 rounded-md text-xs font-semibold text-white transition-colors ${styles.accentBg}`}
           >
+            <DownloadIcon className="w-3.5 h-3.5" />
             Download
           </button>
         </div>

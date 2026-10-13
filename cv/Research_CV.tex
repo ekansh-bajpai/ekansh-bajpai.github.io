@@ -1,0 +1,107 @@
+% Research CV, Ekansh Bajpai. Build: pdflatex Research_CV.tex (twice), then copy Research_CV.pdf to ../pdfs/
+\documentclass[10.5pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.8cm,top=1.5cm,bottom=1.6cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{RGB}{0,37,170}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=2pt,parsep=0pt}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{-0.6ex}\color{accent}\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{1.6ex}{0.9ex}
+
+% \entry{title}{date}{place}{details}
+\newcommand{\entry}[4]{%
+  \textbf{#1}\hfill{\small #2}\\
+  {\itshape #3}\par
+  \ifx&#4&\else\vspace{1pt}#4\par\fi\vspace{4pt}}
+
+\begin{document}
+
+{\centering
+{\LARGE\bfseries Ekansh Bajpai}\\[3pt]
+Robotics researcher: event-based vision, SLAM and humanoid robot learning\\[3pt]
+{\small Paderborn, Germany \;$\cdot$\;
+\href{mailto:ekansh.bajpai712@gmail.com}{ekansh.bajpai712@gmail.com} \;$\cdot$\;
+\href{https://ekansh.is-a.dev}{ekansh.is-a.dev} \;$\cdot$\;
+\href{https://github.com/ekansh-bajpai}{github.com/ekansh-bajpai} \;$\cdot$\;
+\href{https://linkedin.com/in/ekanshbajpai}{linkedin.com/in/ekanshbajpai}}\par}
+
+\section{Research interests}
+Event-based and neuromorphic vision (spiking neural networks) for visual odometry and SLAM; learning-based perception and
+control for agile robots, from imitation learning with vision-language-action models to whole-body control of humanoids.
+
+\section{Education}
+\entry{M.Sc. Electrical Systems Engineering}{2026}{Paderborn University, Germany}{%
+\textbf{Master's thesis:} \emph{Exploring Neuromorphic Front-Ends for Event-Based SLAM} \;---\; \textbf{grade 1.0}\\
+Supervisor: Dr.\ Alper Yegenoglu; examiners: Prof.\ Dr.\ Erdal Kayacan, Prof.\ Dr.\ Sina Saravi
+(Automatic Control Group, RAT).\\
+Focus: signal and information processing, SLAM, neural networks (CNNs, SNNs), event-based vision.}
+\entry{B.Tech.\ Electronics and Communication Engineering}{2015 -- 2019}{Madan Mohan Malaviya University of Technology, India}{%
+Bachelor's thesis: self-balancing object-tracking robot (PID-controlled inverted pendulum, IMU fusion, OpenCV tracking).}
+
+\section{Research experience}
+\entry{Master's thesis research}{completed Oct 2026}{Automatic Control Group (RAT), Paderborn University}{%
+\begin{itemize}
+\item Replaced the CNN patch selector of DEVO (Deep Event Visual Odometry) with spiking neural networks trained with
+      surrogate gradients; compared two temporal encodings (replayed voxel grid, time-surface frames) in 150 evaluation runs.
+\item On MVSEC, the spiking selector achieved about $2\times$ lower absolute trajectory error and $10\times$ smaller spread
+      than the CNN baselines; on held-out TartanAir both viable spiking variants beat both CNNs.
+\item Showed with a same-data CNN control that the remaining gap on fast drone-racing motion (UZH-FPV) comes from the
+      training data, not from spiking computation.
+\item Generated and publicly released \textbf{TartanEvents}, a 1.3\,TB simulated event-camera training dataset.
+\item Built \textbf{SuperEventSLAM}, the first graph-based SLAM back-end for DEVO (keyframes, SuperEvent features,
+      three-stage loop verification, g2o pose-graph optimization; 36.7 FPS end to end).
+\end{itemize}}
+\entry{Student assistant, humanoid robot learning}{Sep 2026 -- present}{Stratosfare -- Fraunhofer IEM, Paderborn}{%
+\begin{itemize}
+\item Implemented NVIDIA's GR00T end-to-end workflow on a real Unitree G1: teleoperated demonstrations, LeRobot dataset
+      export, fine-tuning of the GR00T N1.7 vision-language-action model, and deployment via NVIDIA Jetson AGX Thor.
+\item Collecting whole-body VLA training data with NVLabs GR00T-WholeBodyControl (GEAR-SONIC, PICO VR teleoperation).
+\item Demonstrated the trained G1 picking an object and placing it in a container at a 3-day workshop and guided
+      attendees through teleoperation.
+\end{itemize}}
+\entry{Master's project: autonomous mapping and SLAM optimization}{}{Paderborn University}{%
+LOAM-based lidar SLAM with IMU pose estimation; templated C++ architecture to benchmark pose-graph back-ends (g2o, SE-Sync) in ROS.}
+
+\section{Publications, datasets and software}
+\begin{itemize}
+\item E.\ Bajpai. \emph{Exploring Neuromorphic Front-Ends for Event-Based SLAM.} Master's thesis, Paderborn University, 2026.
+\item Conference paper based on the thesis: manuscript in preparation.
+\item \textbf{TartanEvents} (dataset, 1.3\,TB): \href{https://huggingface.co/datasets/upb-rat-ekansh/TartanEventsLeft_wo_upsampling}{Hugging Face: upb-rat-ekansh/TartanEventsLeft\_wo\_upsampling}
+\item \textbf{pangolin-python-viz} (software): modular Python visualisation library on Pangolin for SLAM:\\
+      \href{https://github.com/ekansh-bajpai/pangolin-python-viz}{github.com/ekansh-bajpai/pangolin-python-viz}
+\end{itemize}
+
+\section{Teaching}
+\entry{Student assistant, Nonlinear Control of Autonomous and Robotic Systems}{Apr 2026 -- Sep 2026}{Automatic Control Group (RAT), Paderborn University}{%
+Built the ROS~2 / Gazebo quadrotor framework and tutorials (PID, feedback linearization, sliding mode control,
+minimum-snap trajectories); supported Lyapunov-based stability analysis; graded student term projects.
+\href{https://github.com/UPB-RAT/nonlinear_control_course_ss26/tree/pid-controller}{Course repository}.}
+
+\section{Industry experience}
+\entry{Student assistant, AI/ML and software}{2024 -- present}{Fraunhofer IEM, Paderborn}{%
+LLM-based knowledge management and compliance platforms (retrieval-augmented generation, FastAPI back-ends).}
+\entry{Working student, front-end developer}{Feb 2023 -- Sep 2023}{NFDI4Culture (National Research Data Infrastructure), Paderborn University}{}
+\entry{Robotics engineering intern}{Aug 2022}{Cellgo GmbH}{Embedded I2C/SPI communication for a carrier robot (ESP32, Arduino).}
+\entry{Associate software developer}{Mar 2021 -- Oct 2021}{Sabre Corporation}{}
+\entry{Software engineer}{Jun 2019 -- Feb 2021}{HummingWave Technologies}{}
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Perception} & Event cameras, spiking neural networks (snnTorch), visual odometry, SLAM, pose-graph optimization, bundle adjustment, OpenCV \\
+\textbf{Robot learning} & Imitation learning, VLA fine-tuning (GR00T, LeRobot), teleoperation, whole-body control, Unitree G1 \\
+\textbf{Control} & Nonlinear control, sliding mode, feedback linearization, Lyapunov stability, PID, trajectory generation \\
+\textbf{Programming} & Python, C++, PyTorch, ROS~2, Eigen, g2o, Gazebo, Git, Linux \\
+\end{tabularx}
+
+\vspace{6pt}
+{\small References available on request.}
+\end{document}

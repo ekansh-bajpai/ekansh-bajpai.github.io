@@ -27,7 +27,7 @@ const categoryIconMap: Record<string, React.ReactNode> = {
 const Skills: React.FC<SkillsProps> = ({ skills, styles }) => {
   return (
     <div className="space-y-4">
-      <h3 className="text-base font-normal">Skills & Technologies</h3>
+      <h3 className="text-lg font-semibold">Skills & Technologies</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {skills.map((skillGroup, idx) => (
@@ -48,7 +48,7 @@ const Skills: React.FC<SkillsProps> = ({ skills, styles }) => {
               {skillGroup.skills.map((skill, sIdx) => (
                 <span
                   key={sIdx}
-                  className={`text-[11px] px-2 py-0.5 rounded-full border font-medium ${styles.btn} hover:border-blue-500 transition-colors cursor-default`}
+                  className={`text-[11px] px-2 py-0.5 rounded-full border font-medium ${styles.btn} hover:border-accent transition-colors cursor-default`}
                 >
                   {skill}
                 </span>

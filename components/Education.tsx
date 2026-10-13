@@ -6,7 +6,7 @@ import { ExternalLinkIcon } from 'lucide-react';
 interface EducationProps {
   education: Education[];
   styles: any;
-  theme: string;
+  theme?: string;
   onEducationClick?: (edu: Education) => void;
 }
 
@@ -55,6 +55,19 @@ const EducationSection: React.FC<EducationProps> = ({
               <p className={styles.secondaryText}>
                 Focus: {edu.focus}
               </p>
+
+              {edu.thesis && (
+                <p className="text-sm">
+                  <span className="font-semibold">Thesis: </span>
+                  <span className={styles.secondaryText}>{edu.thesis}</span>
+                </p>
+              )}
+
+              {edu.grade && (
+                <span className={`inline-block text-xs px-2.5 py-0.5 rounded-full border font-semibold text-hl border-hl/30 bg-hl/5`}>
+                  {edu.grade}
+                </span>
+              )}
             </div>
 
             <div

@@ -1,79 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Ekansh Bajpai</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .font-sans { font-family: 'Inter', sans-serif; }
-        .font-display { font-family: 'Space Grotesk', sans-serif; }
+    <title>Ekansh Bajpai | Robotics & Event-Based Vision</title>
+    <meta name="description" content="Ekansh Bajpai: robotics researcher (M.Sc. Paderborn University, thesis grade 1.0) working on event-based and neuromorphic vision for odometry and SLAM, and learning-based humanoid manipulation.">
+    <meta name="author" content="Ekansh Bajpai">
+    <link rel="canonical" href="https://ekansh.is-a.dev/">
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(128, 128, 128, 0.3);
-            border-radius: 4px;
-        }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        .animate-blink { animation: blink 1s step-end infinite; }
-        
-        @keyframes gridPan {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
-        }
-        .animate-grid { animation: gridPan 20s linear infinite; }
+    <!-- Link previews (email, LinkedIn, messengers) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Ekansh Bajpai | Robotics & Event-Based Vision">
+    <meta property="og:description" content="Event-based and neuromorphic vision for SLAM, and learning-based humanoid manipulation. M.Sc. thesis grade 1.0, Paderborn University.">
+    <meta property="og:url" content="https://ekansh.is-a.dev/">
+    <meta property="og:image" content="https://ekansh.is-a.dev/media/profile.jpg">
+    <meta name="twitter:card" content="summary">
 
-        /* CRT Scanline effect */
-        .scanline {
-            width: 100%;
-            height: 100px;
-            z-index: 100;
-            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0) 100%);
-            opacity: 0.1;
-            position: fixed;
-            bottom: 100%;
-            pointer-events: none;
-            animation: scanline 10s linear infinite;
-        }
-        @keyframes scanline {
-            0% { bottom: 100%; }
-            80% { bottom: 100%; }
-            100% { bottom: -100px; }
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        .crt-overlay {
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-            z-index: 99;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-        }
-
-        .cyber-glitch {
-            text-shadow: 2px 2px #ff00ff, -2px -2px #00f3ff;
-        }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4"
-  }
-}
-</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCYNH4QWWW"></script>
 <script>
@@ -84,6 +30,16 @@
   gtag('config', 'G-SCYNH4QWWW');
 </script>
 <link rel="stylesheet" href="/index.css">
+<!-- Apply saved dark/light mode before first paint (no flash of the wrong theme) -->
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem('theme');
+      var dark = theme ? theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', dark);
+    } catch (e) { /* storage unavailable: React applies the defaults */ }
+  })();
+</script>
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
     <div id="root"></div>
