@@ -263,11 +263,11 @@
         {
           "title": "Spiking Patch Selection for Event-Based Visual Odometry",
           "role": "Master's Thesis | University of Paderborn | Grade 1.0",
-          "description": "Can a spiking neural network replace the CNN that decides which image patches DEVO tracks? I trained SNN patch selectors with two temporal encodings and compared them with CNN baselines in 150 visual-odometry runs on MVSEC, UZH-FPV and held-out TartanAir. Also built TartanEvents (1.3 TB) and, as an extension, a SLAM back-end that runs end to end.",
+          "description": "Can a spiking neural network replace the CNN that decides which image patches DEVO tracks? I trained SNN patch selectors with two temporal encodings and compared them with CNN baselines in 150 visual-odometry runs on MVSEC, UZH-FPV and held-out TartanEvents sequences. Also built TartanEvents (1.3 TB) and, as an extension, a SLAM back-end that runs end to end.",
           "metrics": [
             "~2x lower ATE on MVSEC",
             "10x smaller spread",
-            "Both SNNs beat both CNNs on held-out TartanAir",
+            "Both SNNs beat both CNNs on held-out TartanEvents",
             "1.3 TB dataset released",
             "150 evaluation runs"
           ],
@@ -276,11 +276,11 @@
             "SNN patch selector (LIF neurons, surrogate gradients) inside DEVO; all geometry left unchanged for a like-for-like comparison",
             "Integration with the DEVO visual odometry pipeline",
             "Two encodings: replayed voxel grid (T = 4) and time-surface frames (T = 8)",
-            "Benchmarking on MVSEC, UZH-FPV and held-out TartanAir (150 evaluation runs)",
-            "Held-out TartanAir: both viable SNN variants beat both CNN baselines on both sequences",
+            "Benchmarking on MVSEC, UZH-FPV and held-out TartanEvents sequences (150 evaluation runs)",
+            "Held-out TartanEvents: both viable SNN variants beat both CNN baselines on both sequences",
             "Ablation: a learned score scale hurts; the time-surface encoding is the most robust",
             "Analysis of accuracy under fast motion; latency on neuromorphic hardware identified as future work",
-            "TartanEvents: all TartanAir sequences converted to events (1.3 TB), publicly released",
+            "TartanEvents: all TartanAir RGB sequences (30 environments) converted to events with vid2e (1.3 TB), publicly released",
             "Extension, SuperEventSLAM: keyframes, SuperEvent features, three-stage loop verification and g2o pose-graph optimization; the full pipeline runs end to end at 36.7 FPS",
             "Extension status: loop verification is not yet reliable (untuned thresholds), so drift is not reduced yet; tuning and a ground-truth audit are next steps",
             "Own Python visualisation library on Pangolin for live tracking, mapping and loop closures"
@@ -311,7 +311,7 @@
             {
               "type": "image",
               "url": "/media/vo_ate_results.png",
-              "caption": "Visual-odometry accuracy (ATE, cm, mean over 10 runs; lower is better). The spiking selectors are blue and orange: best on MVSEC and held-out TartanAir; on fast UZH-FPV motion the DEVO-pretrained CNN, trained on upsampled events, is still best."
+              "caption": "Visual-odometry accuracy (ATE, cm, mean over 10 runs; lower is better). The spiking selectors are blue and orange: best on MVSEC and held-out TartanEvents; on fast UZH-FPV motion the DEVO-pretrained CNN, trained on upsampled events, is still best."
             },
             {
               "type": "video",
